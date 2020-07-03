@@ -1,0 +1,698 @@
+[
+    {
+        "name": "Tutorial Island",
+        "uri": "https://oldschool.runescape.wiki/w/Tutorial_Island"
+    },
+    {
+        "name": "Cook's Assistant",
+        "uri": "https://oldschool.runescape.wiki/w/Cook%27s_Assistant"
+    },
+    {
+        "name": "X Marks the Spot",
+        "uri": "https://oldschool.runescape.wiki/w/X_Marks_the_Spot"
+    },
+    {
+        "name": "The Restless Ghost",
+        "uri": "https://oldschool.runescape.wiki/w/The_Restless_Ghost"
+    },
+    {
+        "name": "Rune Mysteries",
+        "uri": "https://oldschool.runescape.wiki/w/Rune_Mysteries"
+    },
+    {
+        "name": "Imp Catcher",
+        "uri": "https://oldschool.runescape.wiki/w/Imp_Catcher"
+    },
+    {
+        "name": "Witch's Potion",
+        "uri": "https://oldschool.runescape.wiki/w/Witch%27s_Potion"
+    },
+    {
+        "name": "Client of Kourend",
+        "uri": "https://oldschool.runescape.wiki/w/Client_of_Kourend"
+    },
+    {
+        "name": "Dwarf Cannon",
+        "uri": "https://oldschool.runescape.wiki/w/Dwarf_Cannon"
+    },
+    {
+        "name": "Waterfall Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Waterfall_Quest"
+    },
+    {
+        "name": "Tree Gnome Village",
+        "uri": "https://oldschool.runescape.wiki/w/Tree_Gnome_Village"
+    },
+    {
+        "name": "Monk's Friend",
+        "uri": "https://oldschool.runescape.wiki/w/Monk%27s_Friend"
+    },
+    {
+        "name": "Hazeel Cult",
+        "uri": "https://oldschool.runescape.wiki/w/Hazeel_Cult"
+    },
+    {
+        "name": "Murder Mystery",
+        "uri": "https://oldschool.runescape.wiki/w/Murder_Mystery"
+    },
+    {
+        "name": "Merlin's Crystal",
+        "uri": "https://oldschool.runescape.wiki/w/Merlin%27s_Crystal"
+    },
+    {
+        "name": "Holy Grail",
+        "uri": "https://oldschool.runescape.wiki/w/Holy_Grail"
+    },
+    {
+        "name": "Druidic Ritual",
+        "uri": "https://oldschool.runescape.wiki/w/Druidic_Ritual"
+    },
+    {
+        "name": "Witch's House",
+        "uri": "https://oldschool.runescape.wiki/w/Witch%27s_House"
+    },
+    {
+        "name": "Black Knights' Fortress",
+        "uri": "https://oldschool.runescape.wiki/w/Black_Knights%27_Fortress"
+    },
+    {
+        "name": "Recruitment Drive",
+        "uri": "https://oldschool.runescape.wiki/w/Recruitment_Drive"
+    },
+    {
+        "name": "Observatory Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Observatory_Quest"
+    },
+    {
+        "name": "Priest in Peril",
+        "uri": "https://oldschool.runescape.wiki/w/Priest_in_Peril"
+    },
+    {
+        "name": "Rag and Bone Man",
+        "uri": "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man"
+    },
+    {
+        "name": "Nature Spirit",
+        "uri": "https://oldschool.runescape.wiki/w/Nature_Spirit"
+    },
+    {
+        "name": "Alfred Grimhand's Barcrawl",
+        "uri": "https://oldschool.runescape.wiki/w/Alfred_Grimhand%27s_Barcrawl"
+    },
+    {
+        "name": "Scorpion Catcher",
+        "uri": "https://oldschool.runescape.wiki/w/Scorpion_Catcher"
+    },
+    {
+        "name": "Plague City",
+        "uri": "https://oldschool.runescape.wiki/w/Plague_City"
+    },
+    {
+        "name": "Biohazard",
+        "uri": "https://oldschool.runescape.wiki/w/Biohazard"
+    },
+    {
+        "name": "Fight Arena",
+        "uri": "https://oldschool.runescape.wiki/w/Fight_Arena"
+    },
+    {
+        "name": "Gertrude's Cat",
+        "uri": "https://oldschool.runescape.wiki/w/Gertrude%27s_Cat"
+    },
+    {
+        "name": "Natural history quiz",
+        "uri": "https://oldschool.runescape.wiki/w/Natural_history_quiz"
+    },
+    {
+        "name": "Jungle Potion",
+        "uri": "https://oldschool.runescape.wiki/w/Jungle_Potion"
+    },
+    {
+        "name": "Vampyre Slayer",
+        "uri": "https://oldschool.runescape.wiki/w/Vampyre_Slayer"
+    },
+    {
+        "name": "Death Plateau",
+        "uri": "https://oldschool.runescape.wiki/w/Death_Plateau"
+    },
+    {
+        "name": "Goblin Diplomacy",
+        "uri": "https://oldschool.runescape.wiki/w/Goblin_Diplomacy"
+    },
+    {
+        "name": "The Queen of Thieves",
+        "uri": "https://oldschool.runescape.wiki/w/The_Queen_of_Thieves"
+    },
+    {
+        "name": "The Depths of Despair",
+        "uri": "https://oldschool.runescape.wiki/w/The_Depths_of_Despair"
+    },
+    {
+        "name": "Mountain Daughter",
+        "uri": "https://oldschool.runescape.wiki/w/Mountain_Daughter"
+    },
+    {
+        "name": "Icthlarin's Little Helper",
+        "uri": "https://oldschool.runescape.wiki/w/Icthlarin%27s_Little_Helper"
+    },
+    {
+        "name": "The Grand Tree",
+        "uri": "https://oldschool.runescape.wiki/w/The_Grand_Tree"
+    },
+    {
+        "name": "Tribal Totem",
+        "uri": "https://oldschool.runescape.wiki/w/Tribal_Totem"
+    },
+    {
+        "name": "The Dig Site",
+        "uri": "https://oldschool.runescape.wiki/w/The_Dig_Site"
+    },
+    {
+        "name": "The Golem",
+        "uri": "https://oldschool.runescape.wiki/w/The_Golem"
+    },
+    {
+        "name": "The Knight's Sword",
+        "uri": "https://oldschool.runescape.wiki/w/The_Knight%27s_Sword"
+    },
+    {
+        "name": "Elemental Workshop I",
+        "uri": "https://oldschool.runescape.wiki/w/Elemental_Workshop_I"
+    },
+    {
+        "name": "Recipe for Disaster/Another Cook's Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Another_Cook%27s_Quest"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing the Goblin generals",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Goblin_generals"
+    },
+    {
+        "name": "Demon Slayer",
+        "uri": "https://oldschool.runescape.wiki/w/Demon_Slayer"
+    },
+    {
+        "name": "Shadow of the Storm",
+        "uri": "https://oldschool.runescape.wiki/w/Shadow_of_the_Storm"
+    },
+    {
+        "name": "Elemental Workshop II",
+        "uri": "https://oldschool.runescape.wiki/w/Elemental_Workshop_II"
+    },
+    {
+        "name": "Lost City",
+        "uri": "https://oldschool.runescape.wiki/w/Lost_City"
+    },
+    {
+        "name": "Fairytale I - Growing Pains",
+        "uri": "https://oldschool.runescape.wiki/w/Fairytale_I_-_Growing_Pains"
+    },
+    {
+        "name": "Shield of Arrav",
+        "uri": "https://oldschool.runescape.wiki/w/Shield_of_Arrav"
+    },
+    {
+        "name": "Creature of Fenkenstrain",
+        "uri": "https://oldschool.runescape.wiki/w/Creature_of_Fenkenstrain"
+    },
+    {
+        "name": "A Soul's Bane",
+        "uri": "https://oldschool.runescape.wiki/w/A_Soul%27s_Bane"
+    },
+    {
+        "name": "The Lost Tribe",
+        "uri": "https://oldschool.runescape.wiki/w/The_Lost_Tribe"
+    },
+    {
+        "name": "Death to the Dorgeshuun",
+        "uri": "https://oldschool.runescape.wiki/w/Death_to_the_Dorgeshuun"
+    },
+    {
+        "name": "The Giant Dwarf",
+        "uri": "https://oldschool.runescape.wiki/w/The_Giant_Dwarf"
+    },
+    {
+        "name": "Another Slice of H.A.M.",
+        "uri": "https://oldschool.runescape.wiki/w/Another_Slice_of_H.A.M."
+    },
+    {
+        "name": "Making History",
+        "uri": "https://oldschool.runescape.wiki/w/Making_History"
+    },
+    {
+        "name": "In Search of the Myreque",
+        "uri": "https://oldschool.runescape.wiki/w/In_Search_of_the_Myreque"
+    },
+    {
+        "name": "Shades of Mort'ton",
+        "uri": "https://oldschool.runescape.wiki/w/Shades_of_Mort%27ton"
+    },
+    {
+        "name": "In Aid of the Myreque",
+        "uri": "https://oldschool.runescape.wiki/w/In_Aid_of_the_Myreque"
+    },
+    {
+        "name": "Bone Voyage",
+        "uri": "https://oldschool.runescape.wiki/w/Bone_Voyage"
+    },
+    {
+        "name": "Enter the Abyss",
+        "uri": "https://oldschool.runescape.wiki/w/Enter_the_Abyss"
+    },
+    {
+        "name": "Wanted!",
+        "uri": "https://oldschool.runescape.wiki/w/Wanted!"
+    },
+    {
+        "name": "The Feud",
+        "uri": "https://oldschool.runescape.wiki/w/The_Feud"
+    },
+    {
+        "name": "Troll Stronghold",
+        "uri": "https://oldschool.runescape.wiki/w/Troll_Stronghold"
+    },
+    {
+        "name": "Troll Romance",
+        "uri": "https://oldschool.runescape.wiki/w/Troll_Romance"
+    },
+    {
+        "name": "Dragon Slayer",
+        "uri": "https://oldschool.runescape.wiki/w/Dragon_Slayer"
+    },
+    {
+        "name": "Horror from the Deep",
+        "uri": "https://oldschool.runescape.wiki/w/Horror_from_the_Deep"
+    },
+    {
+        "name": "Ernest the Chicken",
+        "uri": "https://oldschool.runescape.wiki/w/Ernest_the_Chicken"
+    },
+    {
+        "name": "Animal Magnetism",
+        "uri": "https://oldschool.runescape.wiki/w/Animal_Magnetism"
+    },
+    {
+        "name": "Shilo Village",
+        "uri": "https://oldschool.runescape.wiki/w/Shilo_Village"
+    },
+    {
+        "name": "Doric's Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Doric%27s_Quest"
+    },
+    {
+        "name": "Spirits of the Elid",
+        "uri": "https://oldschool.runescape.wiki/w/Spirits_of_the_Elid"
+    },
+    {
+        "name": "Darkness of Hallowvale",
+        "uri": "https://oldschool.runescape.wiki/w/Darkness_of_Hallowvale"
+    },
+    {
+        "name": "Tower of Life",
+        "uri": "https://oldschool.runescape.wiki/w/Tower_of_Life"
+    },
+    {
+        "name": "Fishing Contest",
+        "uri": "https://oldschool.runescape.wiki/w/Fishing_Contest"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing the Mountain Dwarf",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Mountain_Dwarf"
+    },
+    {
+        "name": "Ghosts Ahoy",
+        "uri": "https://oldschool.runescape.wiki/w/Ghosts_Ahoy"
+    },
+    {
+        "name": "Forgettable Tale...",
+        "uri": "https://oldschool.runescape.wiki/w/Forgettable_Tale..."
+    },
+    {
+        "name": "Garden of Tranquillity",
+        "uri": "https://oldschool.runescape.wiki/w/Garden_of_Tranquillity"
+    },
+    {
+        "name": "Enlightened Journey",
+        "uri": "https://oldschool.runescape.wiki/w/Enlightened_Journey"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing Evil Dave",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Evil_Dave"
+    },
+    {
+        "name": "Big Chompy Bird Hunting",
+        "uri": "https://oldschool.runescape.wiki/w/Big_Chompy_Bird_Hunting"
+    },
+    {
+        "name": "Zogre Flesh Eaters",
+        "uri": "https://oldschool.runescape.wiki/w/Zogre_Flesh_Eaters"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing Pirate Pete",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Pirate_Pete"
+    },
+    {
+        "name": "Tai Bwo Wannai Trio",
+        "uri": "https://oldschool.runescape.wiki/w/Tai_Bwo_Wannai_Trio"
+    },
+    {
+        "name": "The Tourist Trap",
+        "uri": "https://oldschool.runescape.wiki/w/The_Tourist_Trap"
+    },
+    {
+        "name": "Eadgar's Ruse",
+        "uri": "https://oldschool.runescape.wiki/w/Eadgar%27s_Ruse"
+    },
+    {
+        "name": "My Arm's Big Adventure",
+        "uri": "https://oldschool.runescape.wiki/w/My_Arm%27s_Big_Adventure"
+    },
+    {
+        "name": "The Fremennik Trials",
+        "uri": "https://oldschool.runescape.wiki/w/The_Fremennik_Trials"
+    },
+    {
+        "name": "The Fremennik Isles",
+        "uri": "https://oldschool.runescape.wiki/w/The_Fremennik_Isles"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing the Lumbridge Guide",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Lumbridge_Guide"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing Skrach Uglogwee",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Skrach_Uglogwee"
+    },
+    {
+        "name": "Haunted Mine",
+        "uri": "https://oldschool.runescape.wiki/w/Haunted_Mine"
+    },
+    {
+        "name": "Watchtower",
+        "uri": "https://oldschool.runescape.wiki/w/Watchtower"
+    },
+    {
+        "name": "Prince Ali Rescue",
+        "uri": "https://oldschool.runescape.wiki/w/Prince_Ali_Rescue"
+    },
+    {
+        "name": "Contact!",
+        "uri": "https://oldschool.runescape.wiki/w/Contact!"
+    },
+    {
+        "name": "The Eyes of Glouphrie",
+        "uri": "https://oldschool.runescape.wiki/w/The_Eyes_of_Glouphrie"
+    },
+    {
+        "name": "Sea Slug",
+        "uri": "https://oldschool.runescape.wiki/w/Sea_Slug"
+    },
+    {
+        "name": "Olaf's Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Olaf%27s_Quest"
+    },
+    {
+        "name": "Tears of Guthix",
+        "uri": "https://oldschool.runescape.wiki/w/Tears_of_Guthix"
+    },
+    {
+        "name": "Ratcatchers",
+        "uri": "https://oldschool.runescape.wiki/w/Ratcatchers"
+    },
+    {
+        "name": "Temple of Ikov",
+        "uri": "https://oldschool.runescape.wiki/w/Temple_of_Ikov"
+    },
+    {
+        "name": "One Small Favour",
+        "uri": "https://oldschool.runescape.wiki/w/One_Small_Favour"
+    },
+    {
+        "name": "A Tail of Two Cats",
+        "uri": "https://oldschool.runescape.wiki/w/A_Tail_of_Two_Cats"
+    },
+    {
+        "name": "Between a Rock...",
+        "uri": "https://oldschool.runescape.wiki/w/Between_a_Rock..."
+    },
+    {
+        "name": "The Slug Menace",
+        "uri": "https://oldschool.runescape.wiki/w/The_Slug_Menace"
+    },
+    {
+        "name": "Monkey Madness I",
+        "uri": "https://oldschool.runescape.wiki/w/Monkey_Madness_I"
+    },
+    {
+        "name": "Cold War",
+        "uri": "https://oldschool.runescape.wiki/w/Cold_War"
+    },
+    {
+        "name": "The Ascent of Arceuus",
+        "uri": "https://oldschool.runescape.wiki/w/The_Ascent_of_Arceuus"
+    },
+    {
+        "name": "Eagles' Peak",
+        "uri": "https://oldschool.runescape.wiki/w/Eagles%27_Peak"
+    },
+    {
+        "name": "Underground Pass",
+        "uri": "https://oldschool.runescape.wiki/w/Underground_Pass"
+    },
+    {
+        "name": "Skippy and the Mogres",
+        "uri": "https://oldschool.runescape.wiki/w/Skippy_and_the_Mogres"
+    },
+    {
+        "name": "Rag and Bone Man II",
+        "uri": "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man_II"
+    },
+    {
+        "name": "Lair of Tarn Razorlor",
+        "uri": "https://oldschool.runescape.wiki/w/Lair_of_Tarn_Razorlor"
+    },
+    {
+        "name": "Rum Deal",
+        "uri": "https://oldschool.runescape.wiki/w/Rum_Deal"
+    },
+    {
+        "name": "Sheep Shearer",
+        "uri": "https://oldschool.runescape.wiki/w/Sheep_Shearer"
+    },
+    {
+        "name": "Misthalin Mystery",
+        "uri": "https://oldschool.runescape.wiki/w/Misthalin_Mystery"
+    },
+    {
+        "name": "Pirate's Treasure",
+        "uri": "https://oldschool.runescape.wiki/w/Pirate%27s_Treasure"
+    },
+    {
+        "name": "Cabin Fever",
+        "uri": "https://oldschool.runescape.wiki/w/Cabin_Fever"
+    },
+    {
+        "name": "The Great Brain Robbery",
+        "uri": "https://oldschool.runescape.wiki/w/The_Great_Brain_Robbery"
+    },
+    {
+        "name": "The Hand in the Sand",
+        "uri": "https://oldschool.runescape.wiki/w/The_Hand_in_the_Sand"
+    },
+    {
+        "name": "Enakhra's Lament",
+        "uri": "https://oldschool.runescape.wiki/w/Enakhra%27s_Lament"
+    },
+    {
+        "name": "Heroes' Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Heroes%27_Quest"
+    },
+    {
+        "name": "Throne of Miscellania",
+        "uri": "https://oldschool.runescape.wiki/w/Throne_of_Miscellania"
+    },
+    {
+        "name": "Royal Trouble",
+        "uri": "https://oldschool.runescape.wiki/w/Royal_Trouble"
+    },
+    {
+        "name": "Desert Treasure",
+        "uri": "https://oldschool.runescape.wiki/w/Desert_Treasure"
+    },
+    {
+        "name": "Curse of the Empty Lord",
+        "uri": "https://oldschool.runescape.wiki/w/Curse_of_the_Empty_Lord"
+    },
+    {
+        "name": "The General's Shadow",
+        "uri": "https://oldschool.runescape.wiki/w/The_General%27s_Shadow"
+    },
+    {
+        "name": "A Taste of Hope",
+        "uri": "https://oldschool.runescape.wiki/w/A_Taste_of_Hope"
+    },
+    {
+        "name": "Family Crest",
+        "uri": "https://oldschool.runescape.wiki/w/Family_Crest"
+    },
+    {
+        "name": "Legends' Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Legends%27_Quest"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing Sir Amik Varze",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Sir_Amik_Varze"
+    },
+    {
+        "name": "Achievement Diaries",
+        "uri": "https://oldschool.runescape.wiki/w/Achievement_Diaries"
+    },
+    {
+        "name": "Ardougne Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Ardougne_Diary"
+    },
+    {
+        "name": "Falador Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Falador_Diary"
+    },
+    {
+        "name": "Varrock Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Varrock_Diary"
+    },
+    {
+        "name": "Kandarin Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Kandarin_Diary"
+    },
+    {
+        "name": "Fairytale II - Cure a Queen",
+        "uri": "https://oldschool.runescape.wiki/w/Fairytale_II_-_Cure_a_Queen"
+    },
+    {
+        "name": "Recipe for Disaster/Freeing King Awowogei",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_King_Awowogei"
+    },
+    {
+        "name": "Regicide",
+        "uri": "https://oldschool.runescape.wiki/w/Regicide"
+    },
+    {
+        "name": "Sheep Herder",
+        "uri": "https://oldschool.runescape.wiki/w/Sheep_Herder"
+    },
+    {
+        "name": "Roving Elves",
+        "uri": "https://oldschool.runescape.wiki/w/Roving_Elves"
+    },
+    {
+        "name": "Mourning's End Part I",
+        "uri": "https://oldschool.runescape.wiki/w/Mourning%27s_End_Part_I"
+    },
+    {
+        "name": "Mourning's End Part II",
+        "uri": "https://oldschool.runescape.wiki/w/Mourning%27s_End_Part_II"
+    },
+    {
+        "name": "Lunar Diplomacy",
+        "uri": "https://oldschool.runescape.wiki/w/Lunar_Diplomacy"
+    },
+    {
+        "name": "What Lies Below",
+        "uri": "https://oldschool.runescape.wiki/w/What_Lies_Below"
+    },
+    {
+        "name": "King's Ransom",
+        "uri": "https://oldschool.runescape.wiki/w/King%27s_Ransom"
+    },
+    {
+        "name": "Knight Waves Training Grounds",
+        "uri": "https://oldschool.runescape.wiki/w/Knight_Waves_Training_Grounds"
+    },
+    {
+        "name": "Swan Song",
+        "uri": "https://oldschool.runescape.wiki/w/Swan_Song"
+    },
+    {
+        "name": "Recipe for Disaster",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster#Defeating_the_Culinaromancer"
+    },
+    {
+        "name": "Grim Tales",
+        "uri": "https://oldschool.runescape.wiki/w/Grim_Tales"
+    },
+    {
+        "name": "Dream Mentor",
+        "uri": "https://oldschool.runescape.wiki/w/Dream_Mentor"
+    },
+    {
+        "name": "Tale of the Righteous",
+        "uri": "https://oldschool.runescape.wiki/w/Tale_of_the_Righteous"
+    },
+    {
+        "name": "The Forsaken Tower",
+        "uri": "https://oldschool.runescape.wiki/w/The_Forsaken_Tower"
+    },
+    {
+        "name": "Wilderness Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Wilderness_Diary"
+    },
+    {
+        "name": "Karamja Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Karamja_Diary"
+    },
+    {
+        "name": "Kourend & Kebos Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Kourend_%26_Kebos_Diary"
+    },
+    {
+        "name": "Lumbridge & Draynor Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Lumbridge_%26_Draynor_Diary"
+    },
+    {
+        "name": "Morytania Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Morytania_Diary"
+    },
+    {
+        "name": "Devious Minds",
+        "uri": "https://oldschool.runescape.wiki/w/Devious_Minds"
+    },
+    {
+        "name": "The Fremennik Exiles",
+        "uri": "https://oldschool.runescape.wiki/w/The_Fremennik_Exiles"
+    },
+    {
+        "name": "Sins of the Father",
+        "uri": "https://oldschool.runescape.wiki/w/Sins_of_the_Father"
+    },
+    {
+        "name": "Romeo & Juliet",
+        "uri": "https://oldschool.runescape.wiki/w/Romeo_%26_Juliet"
+    },
+    {
+        "name": "Making Friends with My Arm",
+        "uri": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm"
+    },
+    {
+        "name": "Monkey Madness II",
+        "uri": "https://oldschool.runescape.wiki/w/Monkey_Madness_II"
+    },
+    {
+        "name": "Fremennik Diary",
+        "uri": "https://oldschool.runescape.wiki/w/Fremennik_Diary"
+    },
+    {
+        "name": "Dragon Slayer II",
+        "uri": "https://oldschool.runescape.wiki/w/Dragon_Slayer_II"
+    },
+    {
+        "name": "Song of the Elves",
+        "uri": "https://oldschool.runescape.wiki/w/Song_of_the_Elves"
+    },
+    {
+        "name": "The Corsair Curse",
+        "uri": "https://oldschool.runescape.wiki/w/The_Corsair_Curse"
+    },
+    {
+        "name": "Clock Tower",
+        "uri": "https://oldschool.runescape.wiki/w/Clock_Tower"
+    }
+]

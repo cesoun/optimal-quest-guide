@@ -1,13 +1,15 @@
-package com.example;
+package com.optimalquestguide;
 
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class ExamplePluginTest
+@Slf4j
+public class OptimalQuestGuidePluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(ExamplePlugin.class);
+		ExternalPluginManager.loadBuiltin(GuidePlugin.class);
 		RuneLite.main(args);
 	}
 }
