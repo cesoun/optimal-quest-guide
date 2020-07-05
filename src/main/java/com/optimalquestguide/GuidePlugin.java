@@ -85,7 +85,7 @@ public class GuidePlugin extends Plugin {
 
         // Build the navigation button that shows on the sidebar.
         nBtn = NavigationButton.builder()
-                .tooltip("Optimal QuestInfo Guide")
+                .tooltip("Optimal Quest Guide")
                 .icon(icon)
                 .priority(1)
                 .panel(gPanel)
