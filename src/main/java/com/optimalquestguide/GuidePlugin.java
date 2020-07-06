@@ -33,6 +33,7 @@ import net.runelite.api.Quest;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.api.widgets.WidgetID;
+import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -67,13 +68,9 @@ public class GuidePlugin extends Plugin {
     private NavigationButton nBtn;
     private GuidePanel gPanel;
     private QuestInfo[] infos;
-    private boolean firstLoad;
-
 
     @Override
     protected void startUp() throws Exception {
-        firstLoad = true;
-
         // Parse the quests.json to be loaded into the panel.
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
         infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
@@ -107,19 +104,8 @@ public class GuidePlugin extends Plugin {
     }
 
     @Subscribe
-    public void onGameStateChanged(GameStateChanged e) {
-        if (e.getGameState() == GameState.LOGGED_IN) {
-            firstLoad = true;
-        }
-    }
-
-    @Subscribe
     public void onWidgetLoaded(WidgetLoaded e) {
-        // Check to see if the viewport has loaded & we are loading for first time or if we completed a quest.
-        if ((e.getGroupId() == WidgetID.FIXED_VIEWPORT_GROUP_ID || e.getGroupId() == WidgetID.RESIZABLE_VIEWPORT_OLD_SCHOOL_BOX_GROUP_ID) && firstLoad) {
-            firstLoad = false;
-            updateQuestList();
-        } else if (e.getGroupId() == WidgetID.QUEST_COMPLETED_GROUP_ID) {
+        if (e.getGroupId() == WidgetID.MINIMAP_GROUP_ID || e.getGroupId() == WidgetID.QUEST_COMPLETED_GROUP_ID) {
             updateQuestList();
         }
     }
