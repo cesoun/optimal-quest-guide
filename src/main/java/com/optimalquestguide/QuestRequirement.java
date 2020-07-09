@@ -24,30 +24,35 @@
  */
 package com.optimalquestguide;
 
+import com.optimalquestguide.Panels.GuidePanel;
 import lombok.Getter;
 import lombok.Setter;
-import net.runelite.api.Quest;
-import net.runelite.api.QuestState;
+import net.runelite.api.Skill;
+import net.runelite.client.game.SkillIconManager;
+import net.runelite.client.util.ImageUtil;
 
-public class QuestInfo {
-    @Getter
-    @Setter
-    private String name;
+import java.awt.image.BufferedImage;
 
-    @Getter
-    @Setter
-    private String uri;
+public class QuestRequirement {
 
-    @Getter
     @Setter
-    private QuestRequirement[] reqs;
+    private String skill;
 
     @Getter
     @Setter
-    private QuestState questState;
+    private int level;
 
     @Getter
     @Setter
-    private Quest widget = null;
+    private boolean boostable;
+
+    public BufferedImage getIcon() {
+        if (this.skill.equalsIgnoreCase("quest points")) {
+            return ImageUtil.getResourceStreamFromClass(GuidePanel.class, "/quest_point.png");
+        } else if (this.skill.equalsIgnoreCase("combat level")) {
+            return ImageUtil.getResourceStreamFromClass(GuidePanel.class, "/combat_level.png");
+        }
+
+        return new SkillIconManager().getSkillImage(Skill.valueOf(skill.toUpperCase()), true);
+    }
 }
-
