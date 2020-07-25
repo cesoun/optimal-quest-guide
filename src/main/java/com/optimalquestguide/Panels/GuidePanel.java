@@ -24,6 +24,8 @@
  */
 package com.optimalquestguide.Panels;
 
+import com.optimalquestguide.Layouts.CollapsingGridLayout;
+import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.QuestInfo;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.QuestState;
@@ -38,50 +40,57 @@ public class GuidePanel extends PluginPanel {
     private ErrorPanel ePanel = new ErrorPanel();
     private HashMap<String, QuestPanel> qMap = new HashMap<>();
 
+    private GuideConfig config;
+
     @Inject
-    public GuidePanel(QuestInfo[] infos) {
+    public GuidePanel(GuideConfig config, QuestInfo[] infos) {
         super();
+
+        this.config = config;
+
+        setLayout(new CollapsingGridLayout(infos.length + 1, 1, 0, 2));
 
         ePanel.setContent("Optimal Quest Guide", "Quests will adjust after login.");
         add(ePanel);
 
-
         // Save the object to a HashMap because we want need to build all panels.
         for (QuestInfo info : infos) {
-            QuestPanel qPanel = new QuestPanel(info);
+            QuestPanel qPanel = new QuestPanel(config, info);
             qMap.put(info.getName(), qPanel);
             add(qPanel);
         }
     }
 
     public void updateQuests(QuestInfo[] infos) {
-        removeAll();
-
-        // Set the header.
+        // Update header.
         ePanel.setContent("Optimal Quest Guide", "Happy questing.");
-        add(ePanel);
 
-        // Update the panels.
-        int pCount = 0;
+        // Update panels.
         for (QuestInfo info : infos) {
             QuestPanel qPanel = qMap.get(info.getName());
             if (qPanel == null) return;
 
             qPanel.update(info);
 
-            if (info.getQuestState() == QuestState.NOT_STARTED || info.getQuestState() == QuestState.IN_PROGRESS) {
-                add(qPanel);
-                ++pCount;
+            if (config.showCompletedQuests()) { // Display all.
+                if (qPanel.isVisible()) return;
+
+                qPanel.setVisible(true);
+            } else if (info.getQuestState() == QuestState.NOT_STARTED || info.getQuestState() == QuestState.IN_PROGRESS) { // Display only not completed.
+                if (qPanel.isVisible()) return;
+
+                qPanel.setVisible(true);
+            } else { // Remove from the panel if it's not showing all and its finished.
+                if (!qPanel.isVisible()) return;
+
+                qPanel.setVisible(false);
             }
+
+            revalidate();
         }
 
         // If there were no quests then just show the message.
-        if (pCount == 0) {
-            remove(ePanel);
-            ePanel.setContent("Optimal Quest Guide", "Optimal Quest Guide completed!");
-            add(ePanel);
-        }
-
-        revalidate();
+        // this.getComponentCount();
+//            ePanel.setContent("Optimal Quest Guide", "Optimal Quest Guide completed!");
     }
 }

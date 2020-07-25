@@ -25,15 +25,17 @@
 package com.optimalquestguide;
 
 import com.google.gson.Gson;
+import com.google.inject.Provides;
 import com.optimalquestguide.Panels.GuidePanel;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.Quest;
-import net.runelite.api.events.WidgetLoaded;
-import net.runelite.api.widgets.WidgetID;
+import net.runelite.api.events.GameTick;
 import net.runelite.client.callback.ClientThread;
+import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -59,6 +61,9 @@ public class GuidePlugin extends Plugin {
     private Client c;
 
     @Inject
+    private GuideConfig config;
+
+    @Inject
     private ClientThread cThread;
 
     @Inject
@@ -77,7 +82,7 @@ public class GuidePlugin extends Plugin {
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
         infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
 
-        gPanel = new GuidePanel(infos);
+        gPanel = new GuidePanel(config, infos);
 
         // Setup the icon.
         final BufferedImage icon = ImageUtil.getResourceStreamFromClass(getClass(), "/panel_icon.png");
@@ -105,11 +110,27 @@ public class GuidePlugin extends Plugin {
         cToolbar.removeNavigation(nBtn);
     }
 
+    @Provides
+    GuideConfig provideConfig(ConfigManager configManager) {
+        return configManager.getConfig(GuideConfig.class);
+    }
+
     @Subscribe
-    public void onWidgetLoaded(WidgetLoaded e) {
-        if (e.getGroupId() == WidgetID.MINIMAP_GROUP_ID || e.getGroupId() == WidgetID.QUEST_COMPLETED_GROUP_ID) {
-            updateQuestList();
-        }
+    public void onConfigChanged(ConfigChanged e) {
+        updateQuestList();
+    }
+
+    @Subscribe
+    public void onGameTick(GameTick e) {
+        /*
+            Replacing onWidgetLoaded with onGameTick should streamline the panel updates better.
+
+            There are some occasions where the quest dialog gets 1 ticked and closed without updating.
+
+            If this turns out to be to heavy a task within the GameTick i'll like revert it back and
+                set up a timer invoked task.
+         */
+        updateQuestList();
     }
 
     private void updateQuestList() {

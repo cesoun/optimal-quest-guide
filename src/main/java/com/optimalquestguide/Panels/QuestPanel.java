@@ -24,6 +24,7 @@
  */
 package com.optimalquestguide.Panels;
 
+import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.QuestInfo;
 import com.optimalquestguide.QuestRequirement;
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +44,11 @@ public class QuestPanel extends JPanel {
     private JPanel qRequirements = new JPanel();
     private JLabel qLabel = new JLabel();
 
-    public QuestPanel(QuestInfo quest) {
+    private GuideConfig config;
+
+    public QuestPanel(GuideConfig config, QuestInfo quest) {
+        this.config = config;
+
         setLayout(new GridBagLayout());
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
@@ -52,7 +57,7 @@ public class QuestPanel extends JPanel {
         gbc.gridy = 0;
         gbc.gridx = 0;
 
-        qHeader.setBorder(new EmptyBorder(2, 0, 2, 0));
+        qHeader.setBorder(new EmptyBorder(5, 0, 5, 0));
         qHeader.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
         qLabel.setText(quest.getName());
@@ -131,7 +136,9 @@ public class QuestPanel extends JPanel {
             if (quest.getQuestState() == null) return;
 
             if (quest.getQuestState() == QuestState.IN_PROGRESS)
-                qLabel.setForeground(ColorScheme.GRAND_EXCHANGE_ALCH);
+                qLabel.setForeground(config.getInProgressColor());
+            else if (quest.getQuestState() == QuestState.FINISHED)
+                qLabel.setForeground(config.getCompletedColor());
         });
     }
 }
