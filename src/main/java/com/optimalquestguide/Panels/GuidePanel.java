@@ -24,10 +24,11 @@
  */
 package com.optimalquestguide.Panels;
 
-import com.optimalquestguide.Layouts.CollapsingGridLayout;
 import com.optimalquestguide.GuideConfig;
+import com.optimalquestguide.Layouts.CollapsingGridLayout;
 import com.optimalquestguide.QuestInfo;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.api.Client;
 import net.runelite.api.QuestState;
 import net.runelite.client.ui.PluginPanel;
 
@@ -38,15 +39,17 @@ import java.util.HashMap;
 @Slf4j
 public class GuidePanel extends PluginPanel {
 
-    private ErrorPanel ePanel = new ErrorPanel();
-    private HashMap<String, QuestPanel> qMap = new HashMap<>();
+    private final Client c;
+    private final GuideConfig config;
 
-    private GuideConfig config;
+    private final ErrorPanel ePanel = new ErrorPanel();
+    private final HashMap<String, QuestPanel> qMap = new HashMap<>();
 
     @Inject
-    public GuidePanel(GuideConfig config, QuestInfo[] infos) {
+    public GuidePanel(Client c, GuideConfig config, QuestInfo[] infos) {
         super();
 
+        this.c = c;
         this.config = config;
 
         setLayout(new CollapsingGridLayout(infos.length + 1, 1, 0, 2));
@@ -54,9 +57,11 @@ public class GuidePanel extends PluginPanel {
         ePanel.setContent("Optimal Quest Guide", "Quests will adjust after login.");
         add(ePanel);
 
+        // TODO: Add a search bar and functionality for filtering quests.
+
         // Save the object to a HashMap because we want need to build all panels.
         for (QuestInfo info : infos) {
-            QuestPanel qPanel = new QuestPanel(config, info);
+            QuestPanel qPanel = new QuestPanel(c, config, info);
             qMap.put(info.getName(), qPanel);
             add(qPanel);
         }

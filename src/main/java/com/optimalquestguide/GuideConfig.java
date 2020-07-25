@@ -63,7 +63,33 @@ public interface GuideConfig extends Config {
         return new Color(110, 225, 110);
     }
 
-    // TODO: Skill Requirement Met
-    // TODO: Skill Requirement Not Met
-    // TODO: Skill Requirement Boostable
+    @ConfigItem(
+            keyName = "requirementMetColor",
+            name = "Requirement level met",
+            description = "Color of Requirements that have been met or exceeded",
+            position = 3
+    )
+    default Color getRequirementMetColor() {
+        return new Color(110, 225, 110);
+    }
+
+    @ConfigItem(
+            keyName = "requirementUnmetColor",
+            name = "Requirement level unmet",
+            description = "Color of Requirements that have been unmet and unboostable",
+            position = 4
+    )
+    default Color getRequirementUnmetColor() {
+        return new Color(230, 30, 30);
+    }
+
+    @ConfigItem(
+            keyName = "requirementBoostableColor",
+            name = "Requirement boostable",
+            description = "Color of Requirements that have are unmet and boostable",
+            position = 5
+    )
+    default Color getRequirementBoostableColor() {
+        return new Color(50, 160, 250);
+    }
 }

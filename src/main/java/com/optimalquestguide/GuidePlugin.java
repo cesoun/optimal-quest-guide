@@ -82,7 +82,7 @@ public class GuidePlugin extends Plugin {
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
         infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
 
-        gPanel = new GuidePanel(config, infos);
+        gPanel = new GuidePanel(c, config, infos);
 
         // Setup the icon.
         final BufferedImage icon = ImageUtil.getResourceStreamFromClass(getClass(), "/panel_icon.png");
@@ -117,7 +117,7 @@ public class GuidePlugin extends Plugin {
 
     @Subscribe
     public void onConfigChanged(ConfigChanged e) {
-        updateQuestList();
+        cThread.invoke(this::updateQuestList);
     }
 
     @Subscribe
@@ -125,10 +125,10 @@ public class GuidePlugin extends Plugin {
         /*
             Replacing onWidgetLoaded with onGameTick should streamline the panel updates better.
 
-            There are some occasions where the quest dialog gets 1 ticked and closed without updating.
+            There were some occasions where the quest dialog gets 1 ticked and closed without updating the panel.
 
-            If this turns out to be to heavy a task within the GameTick i'll like revert it back and
-                set up a timer invoked task.
+            If this turns out to be to heavy a task within the GameTick i'll like revert it back and look for another
+                solution that is potentially more lightweight.
          */
         updateQuestList();
     }

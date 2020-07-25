@@ -35,6 +35,7 @@ import java.awt.image.BufferedImage;
 
 public class QuestRequirement {
 
+    @Getter
     @Setter
     private String skill;
 

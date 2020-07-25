@@ -28,7 +28,10 @@ import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.QuestInfo;
 import com.optimalquestguide.QuestRequirement;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.api.Client;
 import net.runelite.api.QuestState;
+import net.runelite.api.Skill;
+import net.runelite.api.VarPlayer;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.util.LinkBrowser;
@@ -36,18 +39,25 @@ import net.runelite.client.util.LinkBrowser;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.HashMap;
 
 @Slf4j
 public class QuestPanel extends JPanel {
 
-    private JPanel qHeader = new JPanel();
-    private JPanel qRequirements = new JPanel();
-    private JLabel qLabel = new JLabel();
+    private final Client c;
+    private final GuideConfig config;
 
-    private GuideConfig config;
+    private final JPanel qHeader = new JPanel();
+    private final JPanel qRequirements = new JPanel();
+    private final JLabel qLabel = new JLabel();
 
-    public QuestPanel(GuideConfig config, QuestInfo quest) {
+    private final QuestInfo quest;
+    private final HashMap<String, JLabel> skillMap = new HashMap<>();
+
+    public QuestPanel(Client c, GuideConfig config, QuestInfo quest) {
+        this.c = c;
         this.config = config;
+        this.quest = quest;
 
         setLayout(new GridBagLayout());
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -120,6 +130,9 @@ public class QuestPanel extends JPanel {
             reqGroup.add(icon, c);
             reqGroup.add(level, c);
 
+            // Add the level label to the hashmap to be updated later.
+            skillMap.put(requirement.getSkill().toLowerCase(), level);
+
             qRequirements.add(reqGroup, gbc);
             gbc.gridx++;
 
@@ -139,6 +152,35 @@ public class QuestPanel extends JPanel {
                 qLabel.setForeground(config.getInProgressColor());
             else if (quest.getQuestState() == QuestState.FINISHED)
                 qLabel.setForeground(config.getCompletedColor());
+
+            for (QuestRequirement requirement : quest.getReqs()) {
+                if (this.c.getLocalPlayer() == null) continue;
+
+                String skill = requirement.getSkill();
+
+                if (skill.equalsIgnoreCase("quest points")) {
+                    updateRequirement(requirement, skill, this.c.getVarpValue(VarPlayer.QUEST_POINTS.getId()));
+                } else if (skill.equalsIgnoreCase("combat level")) {
+                    updateRequirement(requirement, skill, this.c.getLocalPlayer().getCombatLevel());
+                } else {
+                    updateRequirement(requirement, skill, this.c.getRealSkillLevel(Skill.valueOf(skill.toUpperCase())));
+                }
+            }
         });
+    }
+
+    private void updateRequirement(QuestRequirement requirement, String skill, int level) {
+        // Get the label from the map.
+        JLabel label = skillMap.get(skill.toLowerCase());
+        if (label == null) return;
+
+        // Update the label according to the value & boostable status.
+        if (level >= requirement.getLevel()) {
+            label.setForeground(config.getRequirementMetColor());
+        } else if (requirement.isBoostable()) {
+            label.setForeground(config.getRequirementBoostableColor());
+        } else {
+            label.setForeground(config.getRequirementUnmetColor());
+        }
     }
 }

@@ -33,8 +33,8 @@ import java.awt.*;
 
 public class ErrorPanel extends JPanel {
 
-    private JLabel title = new JShadowedLabel();
-    private JLabel description = new JShadowedLabel();
+    private final JLabel title = new JShadowedLabel();
+    private final JLabel description = new JShadowedLabel();
 
     public ErrorPanel() {
         setBorder(new EmptyBorder(5, 10, 10, 10));
