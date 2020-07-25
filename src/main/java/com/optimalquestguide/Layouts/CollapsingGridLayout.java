@@ -1,4 +1,29 @@
+/*
+ * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package com.optimalquestguide.Layouts;
+
 
 import java.awt.*;
 import java.util.function.Function;
@@ -51,7 +76,7 @@ public class CollapsingGridLayout extends GridLayout
         synchronized (parent.getTreeLock())
         {
             final Insets insets = parent.getInsets();
-            final int ncomponents = getVisibleComponents(parent);
+            final int ncomponents = parent.getComponentCount();
             int nrows = getRows();
             int ncols = getColumns();
 
@@ -114,7 +139,7 @@ public class CollapsingGridLayout extends GridLayout
                 {
                     int i = r * ncols + c;
 
-                    if (i < parent.getComponentCount())
+                    if (i < ncomponents)
                     {
                         if (!parent.getComponent(i).isVisible()) continue;
 
@@ -130,7 +155,7 @@ public class CollapsingGridLayout extends GridLayout
     }
 
     /**
-     * Calculate outer size of the layout based on it's children and sizer
+     * Calculate outer size of the layout based on it's visible children and sizer
      * @param parent parent component
      * @param sizer functioning returning dimension of the child component
      * @return outer size
@@ -194,9 +219,10 @@ public class CollapsingGridLayout extends GridLayout
         final Insets insets = parent.getInsets();
 
         // Apply insets and horizontal and vertical gap to layout
+        // This uses a different nrow count because we only want to apply to the visible components.
         return new Dimension(
                 insets.left + insets.right + nw + (ncols - 1) * getHgap(),
-                insets.top + insets.bottom + nh + (nrows - 1) * getVgap());
+                insets.top + insets.bottom + nh + (getVisibleComponents(parent) - 1) * getVgap());
     }
 
     /**
@@ -212,20 +238,5 @@ public class CollapsingGridLayout extends GridLayout
                 visible++;
 
         return visible;
-    }
-
-    /**
-     * Get the count of hidden child components
-     * @param parent parent component
-     * @return hidden count
-     */
-    private int getHiddenComponents(Container parent) {
-        int hidden = 0;
-
-        for (Component c : parent.getComponents())
-            if (c.isVisible())
-                hidden++;
-
-        return hidden;
     }
 }

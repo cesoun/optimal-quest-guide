@@ -32,6 +32,7 @@ import net.runelite.api.QuestState;
 import net.runelite.client.ui.PluginPanel;
 
 import javax.inject.Inject;
+import java.awt.*;
 import java.util.HashMap;
 
 @Slf4j
@@ -62,35 +63,40 @@ public class GuidePanel extends PluginPanel {
     }
 
     public void updateQuests(QuestInfo[] infos) {
-        // Update header.
-        ePanel.setContent("Optimal Quest Guide", "Happy questing.");
-
         // Update panels.
         for (QuestInfo info : infos) {
             QuestPanel qPanel = qMap.get(info.getName());
-            if (qPanel == null) return;
+            if (qPanel == null) continue;
 
             qPanel.update(info);
 
             if (config.showCompletedQuests()) { // Display all.
-                if (qPanel.isVisible()) return;
+                if (qPanel.isVisible()) continue;
 
                 qPanel.setVisible(true);
             } else if (info.getQuestState() == QuestState.NOT_STARTED || info.getQuestState() == QuestState.IN_PROGRESS) { // Display only not completed.
-                if (qPanel.isVisible()) return;
+                if (qPanel.isVisible()) continue;
 
                 qPanel.setVisible(true);
             } else { // Remove from the panel if it's not showing all and its finished.
-                if (!qPanel.isVisible()) return;
+                if (!qPanel.isVisible()) continue;
 
                 qPanel.setVisible(false);
             }
-
-            revalidate();
         }
 
-        // If there were no quests then just show the message.
-        // this.getComponentCount();
-//            ePanel.setContent("Optimal Quest Guide", "Optimal Quest Guide completed!");
+        int count = 0;
+        for (Component c : this.getComponents()) {
+            if (c.isVisible())
+                count++;
+        }
+
+        if (count == 1) {
+            ePanel.setContent("Optimal Quest Guide", "Optimal Quest Guide Completed!");
+        } else {
+            ePanel.setContent("Optimal Quest Guide", "Happy questing.");
+        }
+
+        revalidate();
     }
 }
