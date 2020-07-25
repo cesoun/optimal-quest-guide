@@ -30,7 +30,9 @@ import com.optimalquestguide.QuestInfo;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.QuestState;
+import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
+import net.runelite.client.ui.components.IconTextField;
 
 import javax.inject.Inject;
 import java.awt.*;
@@ -43,7 +45,9 @@ public class GuidePanel extends PluginPanel {
     private final GuideConfig config;
 
     private final ErrorPanel ePanel = new ErrorPanel();
+    private final IconTextField searchBar = new IconTextField();
     private final HashMap<String, QuestPanel> qMap = new HashMap<>();
+    private final HashMap<String, QuestPanel> searchMap = new HashMap<>();
 
     @Inject
     public GuidePanel(Client c, GuideConfig config, QuestInfo[] infos) {
@@ -52,12 +56,20 @@ public class GuidePanel extends PluginPanel {
         this.c = c;
         this.config = config;
 
-        setLayout(new CollapsingGridLayout(infos.length + 1, 1, 0, 2));
+        setLayout(new CollapsingGridLayout(infos.length + 2, 1, 0, 2));
 
         ePanel.setContent("Optimal Quest Guide", "Quests will adjust after login.");
         add(ePanel);
 
-        // TODO: Add a search bar and functionality for filtering quests.
+        // Search Bar for filtering quests.
+        searchBar.setIcon(IconTextField.Icon.SEARCH);
+        searchBar.setPreferredSize(new Dimension(PluginPanel.WIDTH - 10, 30));
+        searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        searchBar.setHoverBackgroundColor(ColorScheme.DARK_GRAY_HOVER_COLOR);
+        searchBar.addClearListener(this::onSearch);
+        searchBar.addKeyListener(e -> onSearch());
+
+        add(searchBar);
 
         // Save the object to a HashMap because we want need to build all panels.
         for (QuestInfo info : infos) {
@@ -67,7 +79,24 @@ public class GuidePanel extends PluginPanel {
         }
     }
 
+    private void onSearch() {
+        if (config.searchCompletedQuests() || searchMap.isEmpty()) {
+            qMap.forEach((quest, panel) -> {
+                panel.setVisible(quest.toLowerCase().contains(searchBar.getText().toLowerCase()));
+                revalidate();
+            });
+        } else {
+            searchMap.forEach((quest, panel) -> {
+                panel.setVisible(quest.toLowerCase().contains(searchBar.getText().toLowerCase()));
+                revalidate();
+            });
+        }
+    }
+
     public void updateQuests(QuestInfo[] infos) {
+        // Prevent updates while the search bar contains text.
+        if (!searchBar.getText().isEmpty()) return;
+
         // Update panels.
         for (QuestInfo info : infos) {
             QuestPanel qPanel = qMap.get(info.getName());
@@ -90,17 +119,19 @@ public class GuidePanel extends PluginPanel {
             }
         }
 
-        int count = 0;
+        // Clear the search map before updating.
+        searchMap.clear();
+
         for (Component c : this.getComponents()) {
-            if (c.isVisible())
-                count++;
+            if (!c.isVisible()) continue;
+
+            if (c instanceof QuestPanel) {
+                QuestPanel qPanel = (QuestPanel) c;
+                searchMap.put(qPanel.getQuest().getName(), qPanel);
+            }
         }
 
-        if (count == 1) {
-            ePanel.setContent("Optimal Quest Guide", "Optimal Quest Guide Completed!");
-        } else {
-            ePanel.setContent("Optimal Quest Guide", "Happy questing.");
-        }
+        ePanel.setContent("Optimal Quest Guide", "Happy questing.");
 
         revalidate();
     }

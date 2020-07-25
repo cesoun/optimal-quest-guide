@@ -27,6 +27,7 @@ package com.optimalquestguide.Panels;
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.QuestInfo;
 import com.optimalquestguide.QuestRequirement;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.QuestState;
@@ -51,7 +52,9 @@ public class QuestPanel extends JPanel {
     private final JPanel qRequirements = new JPanel();
     private final JLabel qLabel = new JLabel();
 
+    @Getter
     private final QuestInfo quest;
+
     private final HashMap<String, JLabel> skillMap = new HashMap<>();
 
     public QuestPanel(Client c, GuideConfig config, QuestInfo quest) {
@@ -152,6 +155,8 @@ public class QuestPanel extends JPanel {
                 qLabel.setForeground(config.getInProgressColor());
             else if (quest.getQuestState() == QuestState.FINISHED)
                 qLabel.setForeground(config.getCompletedColor());
+            else
+                qLabel.setForeground(config.getNotStartedColor());
 
             for (QuestRequirement requirement : quest.getReqs()) {
                 if (this.c.getLocalPlayer() == null) continue;

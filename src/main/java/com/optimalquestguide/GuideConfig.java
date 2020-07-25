@@ -27,19 +27,42 @@ package com.optimalquestguide;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
+import net.runelite.client.config.ConfigSection;
 
 import java.awt.*;
 
 @ConfigGroup("optimal-quest-guide")
 public interface GuideConfig extends Config {
 
+    @ConfigSection(
+            name = "Quest Status Colors",
+            description = "Colors of not started, in progress and completed Quest",
+            position = 98
+    )
+    String questStatusSection = "status";
+
+    @ConfigSection(
+            name = "Quest Requirement Colors",
+            description = "Colors of met, unmet and boostable Quest Requirements",
+            position = 99
+    )
+    String questRequirementSection = "requirement";
+
     @ConfigItem(
             keyName = "showCompletedQuests",
             name = "Show completed quests",
-            description = "Displays already completed quests",
-            position = 0
+            description = "Displays already completed quests"
     )
     default boolean showCompletedQuests() {
+        return false;
+    }
+
+    @ConfigItem(
+            keyName = "searchCompletedQuests",
+            name = "Search completed quests",
+            description = "Have the search include completed quests"
+    )
+    default boolean searchCompletedQuests() {
         return false;
     }
 
@@ -47,7 +70,7 @@ public interface GuideConfig extends Config {
             keyName = "inProgressColor",
             name = "Quest in progress color",
             description = "Color of Quests in progress",
-            position = 1
+            section = questStatusSection
     )
     default Color getInProgressColor() {
         return new Color(240, 207, 123);
@@ -57,17 +80,27 @@ public interface GuideConfig extends Config {
             keyName = "completedColor",
             name = "Quest completed color",
             description = "Color of Quests that have been completed",
-            position = 2
+            section = questStatusSection
     )
     default Color getCompletedColor() {
         return new Color(110, 225, 110);
     }
 
     @ConfigItem(
+            keyName = "notStartedColor",
+            name = "Quest not started color",
+            description = "Color of Quests that have not been started",
+            section = questStatusSection
+    )
+    default Color getNotStartedColor() {
+        return new Color(198, 198, 198);
+    }
+
+    @ConfigItem(
             keyName = "requirementMetColor",
             name = "Requirement level met",
             description = "Color of Requirements that have been met or exceeded",
-            position = 3
+            section = questRequirementSection
     )
     default Color getRequirementMetColor() {
         return new Color(110, 225, 110);
@@ -77,7 +110,7 @@ public interface GuideConfig extends Config {
             keyName = "requirementUnmetColor",
             name = "Requirement level unmet",
             description = "Color of Requirements that have been unmet and unboostable",
-            position = 4
+            section = questRequirementSection
     )
     default Color getRequirementUnmetColor() {
         return new Color(230, 30, 30);
@@ -87,7 +120,7 @@ public interface GuideConfig extends Config {
             keyName = "requirementBoostableColor",
             name = "Requirement boostable",
             description = "Color of Requirements that have are unmet and boostable",
-            position = 5
+            section = questRequirementSection
     )
     default Color getRequirementBoostableColor() {
         return new Color(50, 160, 250);
