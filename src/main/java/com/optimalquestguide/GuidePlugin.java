@@ -109,22 +109,14 @@ public class GuidePlugin extends Plugin {
         return configManager.getConfig(GuideConfig.class);
     }
 
-    /*
-    TODO: Joining Clan Chats throws AssertionError
+    @Subscribe
+    public void onConfigChanged(ConfigChanged e) {
+        // Check the group firing the event & if we are logged in.
+        if (!e.getGroup().equalsIgnoreCase("optimal-quest-guide")) return;
+        if (!c.getGameState().equals(GameState.LOGGED_IN)) return;
 
-        There is an issue when joining Clan Chats that causes the ConfigChanged event to occur and crashes the client
-        during updateQuestList.
-
-        The error was getting thrown during quest.getState(c) but would still get thrown when checking to see if
-        the Client instance was null.
-
-        For now it seems the only way is to not check for the ConfigChanged event and the issue goes away.
-     */
-//    @Subscribe
-//    public void onConfigChanged(ConfigChanged e) {
-//        log.info("ConfigChanged: {}, {}, {}", e.getClass(), e.getKey(), e.getGroup());
-//        cThread.invoke(this::updateQuestList);
-//    }
+        cThread.invokeLater(this::updateQuestList);
+    }
 
     @Subscribe
     public void onGameTick(GameTick e) {
