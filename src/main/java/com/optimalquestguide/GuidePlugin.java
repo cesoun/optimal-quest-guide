@@ -97,11 +97,6 @@ public class GuidePlugin extends Plugin {
 
         // Add the button to the sidebar.
         cToolbar.addNavigation(nBtn);
-
-        // Update the quest list if we are logged in.
-        if (c.getGameState().equals(GameState.LOGGED_IN)) {
-            cThread.invoke(this::updateQuestList);
-        }
     }
 
     @Override
