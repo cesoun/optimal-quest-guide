@@ -2006,6 +2006,31 @@
                 "skill": "Fletching",
                 "level": "60",
                 "boostable": false
+            },
+            {
+                "skill": "Woodcutting",
+                "level": "62",
+                "boostable": false
+            },
+            {
+                "skill": "Crafting",
+                "level": "56",
+                "boostable": false
+            },
+            {
+                "skill": "Agility",
+                "level": "52",
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": "50",
+                "boostable": false
+            },
+            {
+                "skill": "Magic",
+                "level": "49",
+                "boostable": false
             }
         ]
     },
