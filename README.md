@@ -6,12 +6,16 @@ The Oldschool Wiki contains a great [Optimal Quest Guide](https://oldschool.rune
 - Plugin auto updates on quest completion.
 - Right clicking a quest and select "Open Wiki Guide" to open the wiki page for the quest.
 - Quests display the skill, quest point and combat level requirements for them.
-    - If any of these are wrong they need to be updated on [this wiki page](https://oldschool.runescape.wiki/w/Quests/Skill_requirements).
-    - The icon that looks like: ![(c)](https://github.com/cesoun/optimal-quest-guide/blob/master/src/main/resources/combat_level.png?raw=true) represents the required combat level.
     
 ## Bugs
 
 If you happen to run into one please open and issue here or send me a message on Discord. I wrote most of this during weird hours of the morning.
+
+If any of the quests are missing skill requirements they need to be updated on [this wiki page](https://oldschool.runescape.wiki/w/Quests/Skill_requirements). 
+That page is where I pull all the quest requirement info from and helps in the future.
+
+The Ironman Mode guide is using [this wiki page](https://oldschool.runescape.wiki/w/Optimal_quest_guide/Ironman) which is unfinished at the moment.
+There will likely be missing content. 
 
 ## Contact
 
