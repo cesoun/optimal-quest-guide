@@ -97,12 +97,6 @@ public class GuidePlugin extends Plugin {
 
         // Add the button to the sidebar.
         cToolbar.addNavigation(nBtn);
-
-
-        // Update the quest list if we are logged in.
-        if (c.getGameState().equals(GameState.LOGGED_IN)) {
-            cThread.invoke(this::updateQuestList);
-        }
     }
 
     @Override
@@ -117,7 +111,11 @@ public class GuidePlugin extends Plugin {
 
     @Subscribe
     public void onConfigChanged(ConfigChanged e) {
-        cThread.invoke(this::updateQuestList);
+        // Check the group firing the event & if we are logged in.
+        if (!e.getGroup().equalsIgnoreCase("optimal-quest-guide")) return;
+        if (!c.getGameState().equals(GameState.LOGGED_IN)) return;
+
+        cThread.invokeLater(this::updateQuestList);
     }
 
     @Subscribe
