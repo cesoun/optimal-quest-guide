@@ -195,6 +195,11 @@
         "reqs": []
     },
     {
+        "name": "A Porcine of Interest",
+        "uri": "https://oldschool.runescape.wiki/w/A_Porcine_of_Interest",
+        "reqs": []
+    },
+    {
         "name": "Death Plateau",
         "uri": "https://oldschool.runescape.wiki/w/Death_Plateau",
         "reqs": []
@@ -1998,18 +2003,13 @@
         "uri": "https://oldschool.runescape.wiki/w/Sins_of_the_Father",
         "reqs": [
             {
+                "skill": "Agility",
+                "level": "52",
+                "boostable": false
+            },
+            {
                 "skill": "Attack",
                 "level": "50",
-                "boostable": false
-            },
-            {
-                "skill": "Fletching",
-                "level": "60",
-                "boostable": false
-            },
-            {
-                "skill": "Woodcutting",
-                "level": "62",
                 "boostable": false
             },
             {
@@ -2018,8 +2018,13 @@
                 "boostable": false
             },
             {
-                "skill": "Agility",
-                "level": "52",
+                "skill": "Fletching",
+                "level": "60",
+                "boostable": false
+            },
+            {
+                "skill": "Magic",
+                "level": "49",
                 "boostable": false
             },
             {
@@ -2028,8 +2033,8 @@
                 "boostable": false
             },
             {
-                "skill": "Magic",
-                "level": "49",
+                "skill": "Woodcutting",
+                "level": "62",
                 "boostable": false
             }
         ]
