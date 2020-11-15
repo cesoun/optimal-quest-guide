@@ -1680,7 +1680,23 @@
     {
         "name": "Fairytale II - Cure a Queen",
         "uri": "https://oldschool.runescape.wiki/w/Fairytale_II_-_Cure_a_Queen",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Thieving",
+                "level": "40",
+                "boostable": false
+            },
+            {
+                "skill": "Farming",
+                "level": "49",
+                "boostable": true
+            },
+            {
+                "skill": "Herblore",
+                "level": "57",
+                "boostable": true
+            }
+        ]
     },
     {
         "name": "Recipe for Disaster/Freeing King Awowogei",
