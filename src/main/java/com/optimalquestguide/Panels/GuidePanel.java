@@ -27,9 +27,12 @@ package com.optimalquestguide.Panels;
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.Layouts.CollapsingGridLayout;
 import com.optimalquestguide.QuestInfo;
+import com.optimalquestguide.QuestRequirement;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.QuestState;
+import net.runelite.api.Skill;
+import net.runelite.api.VarPlayer;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.ui.components.IconTextField;
@@ -37,6 +40,7 @@ import net.runelite.client.ui.components.IconTextField;
 import javax.inject.Inject;
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Locale;
 
 @Slf4j
 public class GuidePanel extends PluginPanel {
@@ -79,6 +83,9 @@ public class GuidePanel extends PluginPanel {
         }
     }
 
+    /**
+     * Used for filtering the search results of quests.
+     */
     private void onSearch() {
         if (config.searchCompletedQuests() || searchMap.isEmpty()) {
             qMap.forEach((quest, panel) -> {
@@ -93,6 +100,10 @@ public class GuidePanel extends PluginPanel {
         }
     }
 
+    /**
+     * Called when the panel is updated.
+     * @param infos The QuestInfo array.
+     */
     public void updateQuests(QuestInfo[] infos) {
         // Prevent updates while the search bar contains text.
         if (!searchBar.getText().isEmpty()) return;
@@ -109,6 +120,12 @@ public class GuidePanel extends PluginPanel {
 
                 qPanel.setVisible(true);
             } else if (info.getQuestState() == QuestState.NOT_STARTED || info.getQuestState() == QuestState.IN_PROGRESS) { // Display only not completed.
+                // Filter by met.
+                if (config.filterMetRequirements()) {
+                    filterByMet(qPanel, info);
+                    continue;
+                }
+
                 if (qPanel.isVisible()) continue;
 
                 qPanel.setVisible(true);
@@ -134,5 +151,52 @@ public class GuidePanel extends PluginPanel {
         ePanel.setContent("Optimal Quest Guide", "Happy questing.");
 
         revalidate();
+    }
+
+    /**
+     * Check to see if the player meets a given requirement.
+     * This function does not account for boostable skills.
+     * @param has The players current level
+     * @param need The needed level
+     * @return true if met, false if unmet
+     */
+    private boolean meetsRequirement(int has, int need) {
+        return has >= need;
+    }
+
+    /**
+     * Displays only the quests that the player has the met requirements for.
+     * This is used in both the show all completed, and only by incomplete / in-progress quests.
+     * @param qPanel The QuestPanel
+     * @param info The QuestInfo
+     */
+    private void filterByMet(QuestPanel qPanel, QuestInfo info) {
+        // Filter by met requirements only.
+        if (config.filterMetRequirements()) {
+            // Only run if we have a player.
+            if (this.c.getLocalPlayer() == null) return;
+
+            // Loop over all the requirements
+            for (QuestRequirement requirement : info.getReqs()) {
+                String skill = requirement.getSkill();
+                int level = requirement.getLevel();
+
+                // Check for which skill type it is.
+                if (skill.equalsIgnoreCase("quest points")) {
+                    if (meetsRequirement(this.c.getVarpValue(VarPlayer.QUEST_POINTS.getId()), level)) continue;
+                } else if (skill.equalsIgnoreCase("combat level")) {
+                    if (meetsRequirement(this.c.getLocalPlayer().getCombatLevel(), level)) continue;
+                } else {
+                    if (meetsRequirement(this.c.getRealSkillLevel(Skill.valueOf(skill.toUpperCase())), level)) continue;
+                }
+
+                // If we don't meet a given requirement, the panel is hidden & break the loop.
+                if (qPanel.isVisible()) {
+                    qPanel.setVisible(false);
+                }
+
+                break;
+            }
+        }
     }
 }
