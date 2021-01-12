@@ -67,6 +67,13 @@ public interface GuideConfig extends Config {
     }
 
     @ConfigItem(
+            keyName = "filterMetRequirements",
+            name = "Filter by met Requirements",
+            description = "Only display the quests that you have the met requirements to complete"
+    )
+    default boolean filterMetRequirements() { return false; }
+
+    @ConfigItem(
             keyName = "inProgressColor",
             name = "Quest in progress color",
             description = "Color of Quests in progress",
