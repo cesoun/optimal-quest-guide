@@ -91,7 +91,7 @@ public class GuidePlugin extends Plugin {
         nBtn = NavigationButton.builder()
                 .tooltip("Optimal Quest Guide")
                 .icon(icon)
-                .priority(1)
+                .priority(7)
                 .panel(gPanel)
                 .build();
 
