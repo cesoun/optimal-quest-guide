@@ -26,6 +26,7 @@ package com.optimalquestguide.Panels;
 
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.Layouts.CollapsingGridLayout;
+import com.optimalquestguide.Panels.Listeners.SearchListener;
 import com.optimalquestguide.QuestInfo;
 import com.optimalquestguide.QuestRequirement;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +41,6 @@ import net.runelite.client.ui.components.IconTextField;
 import javax.inject.Inject;
 import java.awt.*;
 import java.util.HashMap;
-import java.util.Locale;
 
 @Slf4j
 public class GuidePanel extends PluginPanel {
@@ -71,7 +71,11 @@ public class GuidePanel extends PluginPanel {
         searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         searchBar.setHoverBackgroundColor(ColorScheme.DARK_GRAY_HOVER_COLOR);
         searchBar.addClearListener(this::onSearch);
-        searchBar.addKeyListener(e -> onSearch());
+
+        // This is new and seems to be what was breaking the plugin. Not sure if this is 100% the right way to do this.
+        // It will likely causes some bugs and need to be adjusted.
+        SearchListener searchListener = new SearchListener(config, qMap, searchMap);
+        searchBar.addKeyListener(searchListener);
 
         add(searchBar);
 
@@ -102,6 +106,7 @@ public class GuidePanel extends PluginPanel {
 
     /**
      * Called when the panel is updated.
+     *
      * @param infos The QuestInfo array.
      */
     public void updateQuests(QuestInfo[] infos) {
@@ -156,7 +161,8 @@ public class GuidePanel extends PluginPanel {
     /**
      * Check to see if the player meets a given requirement.
      * This function does not account for boostable skills.
-     * @param has The players current level
+     *
+     * @param has  The players current level
      * @param need The needed level
      * @return true if met, false if unmet
      */
@@ -167,8 +173,9 @@ public class GuidePanel extends PluginPanel {
     /**
      * Displays only the quests that the player has the met requirements for.
      * This is used in both the show all completed, and only by incomplete / in-progress quests.
+     *
      * @param qPanel The QuestPanel
-     * @param info The QuestInfo
+     * @param info   The QuestInfo
      */
     private void filterByMet(QuestPanel qPanel, QuestInfo info) {
         // Filter by met requirements only.
