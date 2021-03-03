@@ -26,11 +26,8 @@ package com.optimalquestguide.Panels.Listeners;
 
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.Panels.QuestPanel;
-import net.runelite.api.Client;
 import net.runelite.client.input.KeyListener;
-import net.runelite.client.ui.components.IconTextField;
 
-import javax.annotation.Nullable;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;

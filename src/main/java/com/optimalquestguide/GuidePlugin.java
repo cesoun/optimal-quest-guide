@@ -36,7 +36,6 @@ import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
-import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.ClientToolbar;
@@ -69,9 +68,6 @@ public class GuidePlugin extends Plugin {
     @Inject
     private ClientToolbar cToolbar;
 
-    @Inject
-    private SkillIconManager siManager;
-
     private NavigationButton nBtn;
     private GuidePanel gPanel;
     private QuestInfo[] infos;
@@ -85,7 +81,7 @@ public class GuidePlugin extends Plugin {
         gPanel = new GuidePanel(c, config, infos);
 
         // Setup the icon.
-        final BufferedImage icon = ImageUtil.getResourceStreamFromClass(getClass(), "/panel_icon.png");
+        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/panel_icon.png");
 
         // Build the navigation button that shows on the sidebar.
         nBtn = NavigationButton.builder()

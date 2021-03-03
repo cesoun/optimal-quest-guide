@@ -49,9 +49,9 @@ public class QuestRequirement {
 
     public BufferedImage getIcon() {
         if (this.skill.equalsIgnoreCase("quest points")) {
-            return ImageUtil.getResourceStreamFromClass(GuidePanel.class, "/quest_point.png");
+            return ImageUtil.loadImageResource(GuidePanel.class, "/quest_point.png");
         } else if (this.skill.equalsIgnoreCase("combat level")) {
-            return ImageUtil.getResourceStreamFromClass(GuidePanel.class, "/combat_level.png");
+            return ImageUtil.loadImageResource(GuidePanel.class, "/combat_level.png");
         }
 
         return new SkillIconManager().getSkillImage(Skill.valueOf(skill.toUpperCase()), true);
