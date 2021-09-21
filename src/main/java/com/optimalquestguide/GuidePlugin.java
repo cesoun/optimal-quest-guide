@@ -46,6 +46,7 @@ import javax.inject.Inject;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
 @Slf4j
 @PluginDescriptor(
@@ -70,15 +71,17 @@ public class GuidePlugin extends Plugin {
 
     private NavigationButton nBtn;
     private GuidePanel gPanel;
-    private QuestInfo[] infos;
+    private HashMap<String, QuestInfo> infoMap = new HashMap<>();
 
     @Override
     protected void startUp() throws Exception {
         // Parse the quests.json to be loaded into the panel.
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
-        infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
+        for(QuestInfo qi : new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class)) {
+            infoMap.put(qi.getName(), qi);
+        }
 
-        gPanel = new GuidePanel(c, config, infos);
+        gPanel = new GuidePanel(c, config, getInfoArray());
 
         // Setup the icon.
         final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/panel_icon.png");
@@ -129,15 +132,24 @@ public class GuidePlugin extends Plugin {
 
     private void updateQuestList() {
         for (Quest quest : Quest.values()) {
-            for (QuestInfo info : infos) {
-                if (quest.getName().equalsIgnoreCase(info.getName())) {
-                    info.setWidget(quest);
-                    info.setQuestState(quest.getState(c));
-                    break;
-                }
-            }
+           QuestInfo info = infoMap.get(quest.getName());
+           if (info == null) {
+               log.debug("Unknown quest: {}\n", quest.getName());
+               continue;
+           }
+
+           info.setWidget(quest);
+           info.setQuestState(quest.getState(c));
         }
 
-        gPanel.updateQuests(infos);
+        gPanel.updateQuests(getInfoArray());
+    }
+
+    /**
+     * Returns the local infoMap as a/an QuestInfo[]
+     * @return QuestInfo[] array of QuestInfo
+     */
+    private QuestInfo[] getInfoArray() {
+        return infoMap.values().toArray(new QuestInfo[0]);
     }
 }
