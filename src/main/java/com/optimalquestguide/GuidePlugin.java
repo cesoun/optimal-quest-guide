@@ -46,6 +46,7 @@ import javax.inject.Inject;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.HashMap;
 
 @Slf4j
@@ -77,11 +78,17 @@ public class GuidePlugin extends Plugin {
     protected void startUp() throws Exception {
         // Parse the quests.json to be loaded into the panel.
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
-        for(QuestInfo qi : new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class)) {
-            infoMap.put(qi.getName(), qi);
+        QuestInfo[] infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
+
+        // Populate HashMap for lookup
+        for (int i = 0; i < infos.length; i++) {
+            QuestInfo info = infos[i];
+
+            info.setIndex(i);
+            infoMap.put(info.getName(), info);
         }
 
-        gPanel = new GuidePanel(c, config, getInfoArray());
+        gPanel = new GuidePanel(c, config, infos);
 
         // Setup the icon.
         final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/panel_icon.png");
@@ -150,6 +157,9 @@ public class GuidePlugin extends Plugin {
      * @return QuestInfo[] array of QuestInfo
      */
     private QuestInfo[] getInfoArray() {
-        return infoMap.values().toArray(new QuestInfo[0]);
+        QuestInfo[] infos = infoMap.values().toArray(new QuestInfo[0]);
+        Arrays.sort(infos, (o1, o2) -> Integer.compare(o1.getIndex(), o2.getIndex()));
+
+        return infos;
     }
 }

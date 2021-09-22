@@ -40,6 +40,10 @@ public class QuestInfo {
 
     @Getter
     @Setter
+    private int index;
+
+    @Getter
+    @Setter
     private QuestRequirement[] reqs;
 
     @Getter
