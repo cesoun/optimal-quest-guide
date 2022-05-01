@@ -24,6 +24,9 @@
  */
 package com.optimalquestguide.models;
 
+import lombok.ToString;
+
+@ToString
 public class Requirement {
     public int Level;
 

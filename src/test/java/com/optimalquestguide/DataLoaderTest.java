@@ -24,5 +24,8 @@ public class DataLoaderTest {
 
         HashMap<String, Activity> activityMap = guide.getActivityMap();
         assertTrue(activityMap.containsKey("Tutorial Island"));
+        assertTrue(activityMap.containsKey("Romeo & Juliet"));
+
+        assertTrue(activityMap.containsKey("Train Agility from level 14 to level 18"));
     }
 }

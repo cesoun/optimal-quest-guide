@@ -26,9 +26,11 @@ package com.optimalquestguide.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.HashMap;
 
+@ToString
 public class Guide {
     @Getter
     @Setter

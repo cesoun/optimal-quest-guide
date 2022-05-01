@@ -25,12 +25,14 @@
 package com.optimalquestguide.models;
 
 import com.optimalquestguide.Panels.GuidePanel;
+import lombok.ToString;
 import net.runelite.api.Skill;
 import net.runelite.client.game.SkillIconManager;
 import net.runelite.client.util.ImageUtil;
 
 import java.awt.image.BufferedImage;
 
+@ToString
 public class Activity {
     public int Index;
     public int QuestPoints;
