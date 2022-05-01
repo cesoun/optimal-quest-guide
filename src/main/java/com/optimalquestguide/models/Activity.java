@@ -24,7 +24,7 @@
  */
 package com.optimalquestguide.models;
 
-import com.optimalquestguide.Panels.GuidePanel;
+import com.optimalquestguide.GuidePlugin;
 import lombok.ToString;
 import net.runelite.api.Skill;
 import net.runelite.client.game.SkillIconManager;
@@ -77,9 +77,9 @@ public class Activity {
      */
     private BufferedImage getIconForSkill(String skill) {
         if (skill.equalsIgnoreCase("quest points")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/quest_point.png");
+            return ImageUtil.loadImageResource(GuidePlugin.class, "/quest_point.png");
         } else if (skill.equalsIgnoreCase("combat level")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/combat_level.png");
+            return ImageUtil.loadImageResource(GuidePlugin.class, "/combat_level.png");
         }
 
         return new SkillIconManager().getSkillImage(Skill.valueOf(skill.toUpperCase()), true);

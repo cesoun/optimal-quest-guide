@@ -41,6 +41,12 @@ public class Guide {
     private HashMap<String, Activity> activityMap;
 
     @Getter
+    private int questsLength;
+
+    @Getter
+    private int tasksLength;
+
+    @Getter
     @Setter
     private boolean didError;
 
@@ -54,6 +60,9 @@ public class Guide {
     private Guide() {
         this.activities = new Activity[0];
         this.activityMap = new HashMap<>();
+
+        this.questsLength = 0;
+        this.tasksLength = 0;
 
         this.didError = false;
         this.isReady = false;
@@ -83,6 +92,13 @@ public class Guide {
         this.activities = activities;
         for (Activity act : activities) {
             this.activityMap.put(act.Name, act);
+
+            // Counts
+            if (act.IsTask) {
+                this.tasksLength++;
+            } else {
+                this.questsLength++;
+            }
         }
 
         this.isReady = true;

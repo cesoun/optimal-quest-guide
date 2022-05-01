@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * Copyright (c) 2022, Christopher Oswald <https://github.com/cesoun>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,7 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.optimalquestguide.Panels;
+package com.optimalquestguide.panels;
 
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.components.shadowlabel.JShadowedLabel;
@@ -31,31 +31,43 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class ErrorPanel extends JPanel {
+public class HeaderPanel extends JPanel {
+    private final JLabel title;
+    private final JLabel description;
 
-    private final JLabel title = new JShadowedLabel();
-    private final JLabel description = new JShadowedLabel();
+    public HeaderPanel() {
+        title = new JShadowedLabel();
+        description = new JShadowedLabel();
 
-    public ErrorPanel() {
         setBorder(new EmptyBorder(5, 10, 10, 10));
         setLayout(new BorderLayout());
 
         title.setForeground(Color.WHITE);
         title.setHorizontalAlignment(SwingConstants.CENTER);
 
-        description.setFont(FontManager.getRunescapeSmallFont());
         description.setForeground(Color.GRAY);
+        description.setFont(FontManager.getRunescapeSmallFont());
         description.setHorizontalAlignment(SwingConstants.CENTER);
 
         add(title, BorderLayout.NORTH);
         add(description, BorderLayout.CENTER);
+    }
 
-        setVisible(false);
+    public HeaderPanel(String title, String description) {
+        this();
+        this.setContent(title, description);
     }
 
     public void setContent(String title, String description) {
         this.title.setText(title);
         this.description.setText(description);
-        setVisible(true);
+    }
+
+    public void setTitle(String title) {
+        this.title.setText(title);
+    }
+
+    public void setDescription(String description) {
+        this.description.setText(description);
     }
 }

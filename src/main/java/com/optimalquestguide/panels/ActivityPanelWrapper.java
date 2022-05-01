@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * Copyright (c) 2022, Christopher Oswald <https://github.com/cesoun>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,38 +22,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.optimalquestguide;
+package com.optimalquestguide.panels;
 
-import com.optimalquestguide.Panels.GuidePanel;
-import lombok.Getter;
-import lombok.Setter;
-import net.runelite.api.Skill;
-import net.runelite.client.game.SkillIconManager;
-import net.runelite.client.util.ImageUtil;
+import com.optimalquestguide.GuidePlugin;
+import com.optimalquestguide.models.Activity;
+import com.optimalquestguide.models.Guide;
+import net.runelite.client.ui.ColorScheme;
+import net.runelite.client.ui.DynamicGridLayout;
 
-import java.awt.image.BufferedImage;
+import javax.swing.*;
 
-public class QuestRequirement {
+public class ActivityPanelWrapper extends JPanel {
 
-    @Getter
-    @Setter
-    private String skill;
+    private GuidePlugin plugin;
 
-    @Getter
-    @Setter
-    private int level;
+    /**
+     * Contains all the Activity panels
+     * @param plugin GuidePlugin
+     */
+    public ActivityPanelWrapper(GuidePlugin plugin) {
+        this.plugin = plugin;
 
-    @Getter
-    @Setter
-    private boolean boostable;
+        Guide guide = plugin.getGuide();
+        int rows = true ? guide.getQuestsLength()+guide.getTasksLength() : guide.getQuestsLength();
 
-    public BufferedImage getIcon() {
-        if (this.skill.equalsIgnoreCase("quest points")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/quest_point.png");
-        } else if (this.skill.equalsIgnoreCase("combat level")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/combat_level.png");
+        // TODO: Rows based on config 'showTasks'
+        setLayout(new DynamicGridLayout(rows, 1, 0, 2));
+
+        // Add all the activities.
+        for (Activity act : guide.getActivities()) {
+            ActivityPanel ap = new ActivityPanel(plugin.getClient(), plugin.getConfig(), act);
+            add(ap);
         }
-
-        return new SkillIconManager().getSkillImage(Skill.valueOf(skill.toUpperCase()), true);
     }
 }
