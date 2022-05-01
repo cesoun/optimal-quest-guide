@@ -53,20 +53,38 @@ public class HeaderPanel extends JPanel {
         add(description, BorderLayout.CENTER);
     }
 
+    /**
+     * Construct a Header Panel with a title and description.
+     * @param title String
+     * @param description String
+     */
     public HeaderPanel(String title, String description) {
         this();
         this.setContent(title, description);
     }
 
+    /**
+     * Set the title and description on the panel.
+     * @param title String
+     * @param description String
+     */
     public void setContent(String title, String description) {
         this.title.setText(title);
         this.description.setText(description);
     }
 
+    /**
+     * Set the title on the panel.
+     * @param title String
+     */
     public void setTitle(String title) {
         this.title.setText(title);
     }
 
+    /**
+     * Set the description on the panel.
+     * @param description String
+     */
     public void setDescription(String description) {
         this.description.setText(description);
     }

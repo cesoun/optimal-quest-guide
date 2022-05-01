@@ -91,4 +91,6 @@ public class GuidePanel extends PluginPanel {
 
         // TODO: Filtering
     }
+
+    // TODO: Updating, etc...
 }

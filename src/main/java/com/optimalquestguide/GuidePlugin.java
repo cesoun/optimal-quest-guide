@@ -109,16 +109,6 @@ public class GuidePlugin extends Plugin {
 //        clientThread.invokeLater(this::updateQuestList);
     }
 
-//    @Inject
-//    private GuideConfig config;
-
-//    private GuidePanel gPanel;
-//
-//    @Override
-//    protected void startUp() throws Exception {
-//        gPanel = new GuidePanel(c, config, infos);
-//    }
-//
 //    @Subscribe
 //    public void onGameTick(GameTick e) {
 //        /*
