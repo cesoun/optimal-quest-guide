@@ -27,9 +27,12 @@ package com.optimalquestguide.panels;
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.models.Activity;
 import com.optimalquestguide.models.Reward;
+import net.runelite.client.ui.ColorScheme;
 
 import javax.swing.*;
 import java.awt.*;
+
+// TODO: Reward Panel
 
 public class RewardsPanel extends JPanel {
 
@@ -41,7 +44,9 @@ public class RewardsPanel extends JPanel {
         this.config = config;
         this.activity = activity;
 
+        setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setLayout(new GridBagLayout());
+
         GridBagConstraints c = new GridBagConstraints();
         c.ipady++;
 

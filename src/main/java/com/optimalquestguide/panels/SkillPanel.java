@@ -24,50 +24,29 @@
  */
 package com.optimalquestguide.panels;
 
-import com.optimalquestguide.GuideConfig;
-import com.optimalquestguide.models.Activity;
-import com.optimalquestguide.models.Requirement;
-import net.runelite.api.Client;
-import net.runelite.client.ui.components.shadowlabel.JShadowedLabel;
+import net.runelite.client.ui.FontManager;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class RequirementsPanel extends JPanel {
+public class SkillPanel extends JPanel {
 
-    private Client client;
+    // TODO: Update usages for fgColor from config & client skill level
+    public SkillPanel(JLabel icon, JLabel level, Color bgColor, Color fgColor) {
+        setBackground(bgColor);
+        setLayout(new GridLayout(1, 2));
 
-    private GuideConfig config;
+        icon.setPreferredSize(new Dimension(25, 25));
+        icon.setHorizontalAlignment(SwingConstants.CENTER);
+        icon.setVerticalAlignment(SwingConstants.CENTER);
 
-    private Activity activity;
+        level.setFont(FontManager.getRunescapeSmallFont());
+        level.setHorizontalAlignment(SwingConstants.CENTER);
+        level.setVerticalAlignment(SwingConstants.CENTER);
 
-    public RequirementsPanel(Client client, GuideConfig config, Activity activity) {
-        this.client = client;
-        this.config = config;
-        this.activity = activity;
+        level.setForeground(fgColor);
 
-        setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-        c.ipady = 5;
-
-        Requirement[] requirements = activity.Requirements;
-        for (int i = 0; i < requirements.length; i++) {
-            // Add the requirement with the constraint
-            Requirement req = requirements[i];
-
-            JLabel icon = new JLabel(new ImageIcon(activity.getIconForRequirement(req)));
-            JLabel level = new JShadowedLabel(Integer.toString(req.Level));
-
-            // Set Label based on level + config
-            // req.Boostable
-
-            // conditionally move down when we need to render the next line.
-        }
-
-        /*
-            Req. # Req. # Req. # Req. #
-            Req. # Req. # Req. # Req. #
-            ...
-         */
+        add(icon);
+        add(level);
     }
 }

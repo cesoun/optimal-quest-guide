@@ -28,8 +28,10 @@ import com.optimalquestguide.GuidePlugin;
 import com.optimalquestguide.models.Activity;
 import com.optimalquestguide.models.Guide;
 import net.runelite.client.ui.DynamicGridLayout;
+import net.runelite.client.ui.PluginPanel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ActivityPanelWrapper extends JPanel {
 
@@ -43,9 +45,8 @@ public class ActivityPanelWrapper extends JPanel {
         this.plugin = plugin;
 
         Guide guide = plugin.getGuide();
+        // TODO: Config showTasks
         int rows = true ? guide.getQuestsLength()+guide.getTasksLength() : guide.getQuestsLength();
-
-        // TODO: Rows based on config 'showTasks'
         setLayout(new DynamicGridLayout(rows, 1, 0, 2));
 
         // Add all the activities.

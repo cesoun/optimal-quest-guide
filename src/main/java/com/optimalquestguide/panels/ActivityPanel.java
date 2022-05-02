@@ -28,6 +28,7 @@ import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.models.Activity;
 import net.runelite.api.Client;
 import net.runelite.client.ui.ColorScheme;
+import net.runelite.client.ui.DynamicGridLayout;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.components.shadowlabel.JShadowedLabel;
 
@@ -48,52 +49,58 @@ public class ActivityPanel extends JPanel {
         this.config = config;
         this.activity = activity;
 
-        // Set layout, border and background.
-        setLayout(new GridBagLayout());
+        setLayout(new DynamicGridLayout(calcRows(activity), 1, 0, 5));
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
-        // Setup constraints.
-        // TODO: Determine if we can better calculate ipadx
-        GridBagConstraints c = new GridBagConstraints();
-        c.ipadx = 135;
-        c.ipady = 10;
-
-        // Label
+        // Activity label
         JLabel label = new JShadowedLabel();
         label.setFont(FontManager.getRunescapeBoldFont());
         label.setHorizontalAlignment(SwingConstants.CENTER);
 
         // Centering text with html since some activities are extra long.
-        String text = String.format("<html><body style='text-align: center;'><p>%s</p></body></html>", activity.Name);
+        String text = String.format("<html><body style='text-align: center; margin: auto; padding: 0;'><p>%s</p></body></html>", activity.Name);
 
         label.setText(text);
-        add(label, c);
-
-        // Increment gridx
-        c.gridx++;
+        add(label);
 
         // Task Icons
         if (activity.IsTask) {
             setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
             TaskPanel task = new TaskPanel(config, activity);
-            add(task, c);
+            add(task);
         } else {
-            // TODO: Add Requirements
-            RequirementsPanel requirementsPanel = new RequirementsPanel(client, config, activity);
-            add(requirementsPanel, c);
+            // Requirements
+            if (activity.Requirements.length > 0) {
+                RequirementsPanelWrapper requirementsPanel = new RequirementsPanelWrapper(client, config, activity);
+                add(requirementsPanel);
+            }
 
-            // TODO: Add Rewards config opt.
-            // Check config setting to determine render
-            RewardsPanel rewardsPanel = new RewardsPanel(config, activity);
-            add(rewardsPanel);
+            // Rewards
+//            if (activity.Rewards.length > 0) {
+//                RewardsPanel rewardsPanel = new RewardsPanel(config, activity);
+//                add(rewardsPanel);
+//            }
         }
-        /*
-            ****************************
-           |        Activity Name
-           |     Req Req Req Req ...
-           |     Req Req Req Req ...
-            ****************************
-         */
+    }
+
+    /**
+     * Determine the number of rows to include
+     * @param activity Activity
+     * @return Integer number of rows
+     */
+    public int calcRows(Activity activity) {
+        int count = 1;
+
+        if (activity.Requirements.length > 0) {
+            count++;
+        }
+
+        // TODO: Check config setting.
+//        if (activity.Rewards.length > 0) {
+//            count++;
+//        }
+
+        return count;
     }
 }

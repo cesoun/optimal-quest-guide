@@ -27,27 +27,40 @@ package com.optimalquestguide.panels;
 import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.models.Activity;
 import com.optimalquestguide.models.Requirement;
+import net.runelite.api.Client;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.DynamicGridLayout;
-import net.runelite.client.ui.FontManager;
+import net.runelite.client.ui.components.shadowlabel.JShadowedLabel;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class TaskPanel extends JPanel {
+public class RequirementsPanelWrapper extends JPanel {
 
-    public TaskPanel(GuideConfig config, Activity activity) {
-        setBackground(ColorScheme.DARKER_GRAY_HOVER_COLOR);
-        setLayout(new DynamicGridLayout(0, 2, 1, 1));
+    private Client client;
 
-        // Icon & Level
-        Requirement req = activity.Requirements[0];
+    private GuideConfig config;
 
-        JLabel icon = new JLabel(new ImageIcon(activity.getIconForRequirement(req)));
-        JLabel level = new JLabel(Integer.toString(req.Level));
+    private Activity activity;
 
-        SkillPanel sp = new SkillPanel(icon, level, ColorScheme.DARKER_GRAY_HOVER_COLOR, config.getRequirementUnmetColor());
+    public RequirementsPanelWrapper(Client client, GuideConfig config, Activity activity) {
+        this.client = client;
+        this.config = config;
+        this.activity = activity;
 
-        add(sp);
+        Requirement[] requirements = activity.Requirements;
+
+        setBackground(ColorScheme.DARKER_GRAY_COLOR);
+        setLayout(new DynamicGridLayout(0, Math.min(requirements.length, 4), 1, 1));
+
+        for (int i = 0; i < requirements.length; i++) {
+            // Add the requirement with the constraint
+            Requirement req = requirements[i];
+
+            JLabel icon = new JLabel(new ImageIcon(activity.getIconForRequirement(req)));
+            JLabel level = new JShadowedLabel(Integer.toString(req.Level));
+
+            SkillPanel reqPanel = new SkillPanel(icon, level, ColorScheme.DARKER_GRAY_COLOR, config.getCompletedColor());
+            add(reqPanel);
+        }
     }
 }
