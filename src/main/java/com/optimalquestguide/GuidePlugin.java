@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * Copyright (c) 2022, Christopher Oswald <https://github.com/cesoun>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,14 +24,14 @@
  */
 package com.optimalquestguide;
 
-import com.google.gson.Gson;
 import com.google.inject.Provides;
-import com.optimalquestguide.Panels.GuidePanel;
+import com.optimalquestguide.models.Guide;
+import com.optimalquestguide.panels.GuidePanel;
+import com.optimalquestguide.utils.DataLoader;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.Quest;
-import net.runelite.api.events.GameTick;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -43,11 +43,6 @@ import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.util.ImageUtil;
 
 import javax.inject.Inject;
-import java.awt.image.BufferedImage;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.HashMap;
 
 @Slf4j
 @PluginDescriptor(
@@ -58,108 +53,98 @@ import java.util.HashMap;
 )
 public class GuidePlugin extends Plugin {
 
+    @Getter
     @Inject
-    private Client c;
+    private Client client;
 
+    @Inject
+    private ClientThread clientThread;
+
+    @Inject
+    private ClientToolbar toolbar;
+
+    @Getter
     @Inject
     private GuideConfig config;
 
-    @Inject
-    private ClientThread cThread;
-
-    @Inject
-    private ClientToolbar cToolbar;
-
-    private NavigationButton nBtn;
-    private GuidePanel gPanel;
-    private HashMap<String, QuestInfo> infoMap = new HashMap<>();
+    @Getter
+    private Guide guide;
+    private GuidePanel panel;
+    private NavigationButton nav;
 
     @Override
     protected void startUp() throws Exception {
-        // Parse the quests.json to be loaded into the panel.
-        InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
-        QuestInfo[] infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
+        guide = DataLoader.loadJSON();
 
-        // Populate HashMap for lookup
-        for (int i = 0; i < infos.length; i++) {
-            QuestInfo info = infos[i];
+        panel = new GuidePanel(this);
 
-            info.setIndex(i);
-            infoMap.put(info.getName(), info);
-        }
-
-        gPanel = new GuidePanel(c, config, infos);
-
-        // Setup the icon.
-        final BufferedImage icon = ImageUtil.loadImageResource(getClass(), "/panel_icon.png");
-
-        // Build the navigation button that shows on the sidebar.
-        nBtn = NavigationButton.builder()
+        nav = NavigationButton.builder()
                 .tooltip("Optimal Quest Guide")
-                .icon(icon)
+                .icon(ImageUtil.loadImageResource(getClass(), "/panel_icon.png"))
                 .priority(7)
-                .panel(gPanel)
+                .panel(panel)
                 .build();
 
-        // Add the button to the sidebar.
-        cToolbar.addNavigation(nBtn);
+        toolbar.addNavigation(nav);
+        log.info("plugin loaded");
     }
 
     @Override
     protected void shutDown() throws Exception {
-        cToolbar.removeNavigation(nBtn);
+        toolbar.removeNavigation(nav);
+        log.info("plugin unloaded");
     }
 
     @Provides
-    GuideConfig provideConfig(ConfigManager configManager) {
-        return configManager.getConfig(GuideConfig.class);
+    GuideConfig provideConfig(ConfigManager cm) {
+        return cm.getConfig(GuideConfig.class);
     }
 
-    @Subscribe
+        @Subscribe
     public void onConfigChanged(ConfigChanged e) {
         // Check the group firing the event & if we are logged in.
         if (!e.getGroup().equalsIgnoreCase("optimal-quest-guide")) return;
-        if (!c.getGameState().equals(GameState.LOGGED_IN)) return;
+        if (!client.getGameState().equals(GameState.LOGGED_IN)) return;
 
-        cThread.invokeLater(this::updateQuestList);
+//        clientThread.invokeLater(this::updateQuestList);
     }
 
-    @Subscribe
-    public void onGameTick(GameTick e) {
-        /*
-            Replacing onWidgetLoaded with onGameTick should streamline the panel updates better.
-
-            There were some occasions where the quest dialog gets 1 ticked and closed without updating the panel.
-
-            If this turns out to be to heavy a task within the GameTick i'll like revert it back and look for another
-                solution that is potentially more lightweight.
-         */
-        updateQuestList();
-    }
-
-    private void updateQuestList() {
-        for (Quest quest : Quest.values()) {
-           QuestInfo info = infoMap.get(quest.getName());
-           if (info == null) {
-               log.debug("Unknown quest: {}\n", quest.getName());
-               continue;
-           }
-
-           info.setWidget(quest);
-           info.setQuestState(quest.getState(c));
-        }
-
-        gPanel.updateQuests(getInfoArray());
-    }
-
-    /**
-     * Returns the local infoMap as a/an QuestInfo[]
-     * @return QuestInfo[] array of QuestInfo
-     */
-    private QuestInfo[] getInfoArray() {
-        QuestInfo[] infos = infoMap.values().toArray(new QuestInfo[0]);
-        Arrays.sort(infos, (o1, o2) -> Integer.compare(o1.getIndex(), o2.getIndex()));
-
-        return infos;
-    }
+//    @Subscribe
+//    public void onGameTick(GameTick e) {
+//        /*
+//            Replacing onWidgetLoaded with onGameTick should streamline the panel updates better.
+//
+//            There were some occasions where the quest dialog gets 1 ticked and closed without updating the panel.
+//
+//            If this turns out to be to heavy a task within the GameTick i'll like revert it back and look for another
+//                solution that is potentially more lightweight.
+//         */
+//        updateQuestList();
+//    }
+//
+//    private void updateQuestList() {
+//        for (Quest quest : Quest.values()) {
+//           QuestInfo info = infoMap.get(quest.getName());
+//           if (info == null) {
+//               log.debug("Unknown quest: {}\n", quest.getName());
+//               continue;
+//           }
+//
+//           info.setWidget(quest);
+//           info.setQuestState(quest.getState(c));
+//        }
+//
+//        gPanel.updateQuests(getInfoArray());
+//    }
+//
+//    /**
+//     * Returns the local infoMap as a/an QuestInfo[]
+//     * @return QuestInfo[] array of QuestInfo
+//     */
+//    private QuestInfo[] getInfoArray() {
+//        QuestInfo[] infos = infoMap.values().toArray(new QuestInfo[0]);
+//        Arrays.sort(infos, (o1, o2) -> Integer.compare(o1.getIndex(), o2.getIndex()));
+//
+//        return infos;
+//    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * Copyright (c) 2022, Christopher Oswald <https://github.com/cesoun>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,36 +22,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.optimalquestguide;
+package com.optimalquestguide.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import net.runelite.api.Quest;
-import net.runelite.api.QuestState;
+import lombok.ToString;
 
-public class QuestInfo {
-    @Getter
-    @Setter
-    private String name;
+@ToString
+public class Reward {
+    public int Level;
 
-    @Getter
-    @Setter
-    private String uri;
-
-    @Getter
-    @Setter
-    private int index;
-
-    @Getter
-    @Setter
-    private QuestRequirement[] reqs;
-
-    @Getter
-    @Setter
-    private QuestState questState;
-
-    @Getter
-    @Setter
-    private Quest widget = null;
+    public String Skill;
 }
-

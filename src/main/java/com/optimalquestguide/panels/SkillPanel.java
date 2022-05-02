@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Christopher Oswald <https://github.com/cesoun>
+ * Copyright (c) 2022, Christopher Oswald <https://github.com/cesoun>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,38 +22,31 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.optimalquestguide;
+package com.optimalquestguide.panels;
 
-import com.optimalquestguide.Panels.GuidePanel;
-import lombok.Getter;
-import lombok.Setter;
-import net.runelite.api.Skill;
-import net.runelite.client.game.SkillIconManager;
-import net.runelite.client.util.ImageUtil;
+import net.runelite.client.ui.FontManager;
 
-import java.awt.image.BufferedImage;
+import javax.swing.*;
+import java.awt.*;
 
-public class QuestRequirement {
+public class SkillPanel extends JPanel {
 
-    @Getter
-    @Setter
-    private String skill;
+    // TODO: Update usages for fgColor from config & client skill level
+    public SkillPanel(JLabel icon, JLabel level, Color bgColor, Color fgColor) {
+        setBackground(bgColor);
+        setLayout(new GridLayout(1, 2));
 
-    @Getter
-    @Setter
-    private int level;
+        icon.setPreferredSize(new Dimension(25, 25));
+        icon.setHorizontalAlignment(SwingConstants.CENTER);
+        icon.setVerticalAlignment(SwingConstants.CENTER);
 
-    @Getter
-    @Setter
-    private boolean boostable;
+        level.setFont(FontManager.getRunescapeSmallFont());
+        level.setHorizontalAlignment(SwingConstants.CENTER);
+        level.setVerticalAlignment(SwingConstants.CENTER);
 
-    public BufferedImage getIcon() {
-        if (this.skill.equalsIgnoreCase("quest points")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/quest_point.png");
-        } else if (this.skill.equalsIgnoreCase("combat level")) {
-            return ImageUtil.loadImageResource(GuidePanel.class, "/combat_level.png");
-        }
+        level.setForeground(fgColor);
 
-        return new SkillIconManager().getSkillImage(Skill.valueOf(skill.toUpperCase()), true);
+        add(icon);
+        add(level);
     }
 }
