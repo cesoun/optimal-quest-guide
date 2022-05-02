@@ -24,34 +24,35 @@
  */
 package com.optimalquestguide.panels;
 
-import com.optimalquestguide.GuidePlugin;
+import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.models.Activity;
-import com.optimalquestguide.models.Guide;
-import net.runelite.client.ui.DynamicGridLayout;
+import com.optimalquestguide.models.Reward;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class ActivityPanelWrapper extends JPanel {
+public class RewardsPanel extends JPanel {
 
-    private GuidePlugin plugin;
+    private GuideConfig config;
 
-    /**
-     * Contains all the Activity panels
-     * @param plugin GuidePlugin
-     */
-    public ActivityPanelWrapper(GuidePlugin plugin) {
-        this.plugin = plugin;
+    private Activity activity;
 
-        Guide guide = plugin.getGuide();
-        int rows = true ? guide.getQuestsLength()+guide.getTasksLength() : guide.getQuestsLength();
+    public RewardsPanel(GuideConfig config, Activity activity) {
+        this.config = config;
+        this.activity = activity;
 
-        // TODO: Rows based on config 'showTasks'
-        setLayout(new DynamicGridLayout(rows, 1, 0, 2));
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.ipady++;
 
-        // Add all the activities.
-        for (Activity act : guide.getActivities()) {
-            ActivityPanel ap = new ActivityPanel(plugin.getClient(), plugin.getConfig(), act);
-            add(ap);
+        Reward[] rewards = activity.Rewards;
+        for (int i = 0; i < rewards.length; i++) {
+            Reward reward = rewards[i];
+
+            JLabel icon = new JLabel(new ImageIcon(activity.getIconForReward(reward)));
+            JLabel level = new JLabel(Integer.toString(reward.Level));
+
+            // conditionally adjust grid
         }
     }
 }

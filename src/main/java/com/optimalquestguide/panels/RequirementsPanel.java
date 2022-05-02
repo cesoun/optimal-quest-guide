@@ -24,34 +24,50 @@
  */
 package com.optimalquestguide.panels;
 
-import com.optimalquestguide.GuidePlugin;
+import com.optimalquestguide.GuideConfig;
 import com.optimalquestguide.models.Activity;
-import com.optimalquestguide.models.Guide;
-import net.runelite.client.ui.DynamicGridLayout;
+import com.optimalquestguide.models.Requirement;
+import net.runelite.api.Client;
+import net.runelite.client.ui.components.shadowlabel.JShadowedLabel;
 
 import javax.swing.*;
+import java.awt.*;
 
-public class ActivityPanelWrapper extends JPanel {
+public class RequirementsPanel extends JPanel {
 
-    private GuidePlugin plugin;
+    private Client client;
 
-    /**
-     * Contains all the Activity panels
-     * @param plugin GuidePlugin
-     */
-    public ActivityPanelWrapper(GuidePlugin plugin) {
-        this.plugin = plugin;
+    private GuideConfig config;
 
-        Guide guide = plugin.getGuide();
-        int rows = true ? guide.getQuestsLength()+guide.getTasksLength() : guide.getQuestsLength();
+    private Activity activity;
 
-        // TODO: Rows based on config 'showTasks'
-        setLayout(new DynamicGridLayout(rows, 1, 0, 2));
+    public RequirementsPanel(Client client, GuideConfig config, Activity activity) {
+        this.client = client;
+        this.config = config;
+        this.activity = activity;
 
-        // Add all the activities.
-        for (Activity act : guide.getActivities()) {
-            ActivityPanel ap = new ActivityPanel(plugin.getClient(), plugin.getConfig(), act);
-            add(ap);
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.ipady = 5;
+
+        Requirement[] requirements = activity.Requirements;
+        for (int i = 0; i < requirements.length; i++) {
+            // Add the requirement with the constraint
+            Requirement req = requirements[i];
+
+            JLabel icon = new JLabel(new ImageIcon(activity.getIconForRequirement(req)));
+            JLabel level = new JShadowedLabel(Integer.toString(req.Level));
+
+            // Set Label based on level + config
+            // req.Boostable
+
+            // conditionally move down when we need to render the next line.
         }
+
+        /*
+            Req. # Req. # Req. # Req. #
+            Req. # Req. # Req. # Req. #
+            ...
+         */
     }
 }
