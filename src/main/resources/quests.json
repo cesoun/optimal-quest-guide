@@ -2154,6 +2154,27 @@
         ]
     },
     {
+        "name": "Beneath Cursed Sands",
+        "uri": "https://oldschool.runescape.wiki/w/Beneath_Cursed_Sands",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": "62",
+                "boostable": false
+            },
+            {
+                "skill": "Crafting",
+                "level": "55",
+                "boostable": false
+            },
+            {
+                "skill": "Firemaking",
+                "level": "55",
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Making Friends with My Arm",
         "uri": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm",
         "reqs": [
