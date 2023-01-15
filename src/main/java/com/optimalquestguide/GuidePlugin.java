@@ -70,6 +70,9 @@ public class GuidePlugin extends Plugin {
     @Inject
     private ClientToolbar cToolbar;
 
+    @Inject
+    private Gson gson;
+
     private NavigationButton nBtn;
     private GuidePanel gPanel;
     private HashMap<String, QuestInfo> infoMap = new HashMap<>();
@@ -78,7 +81,7 @@ public class GuidePlugin extends Plugin {
     protected void startUp() throws Exception {
         // Parse the quests.json to be loaded into the panel.
         InputStream questDataFile = GuidePlugin.class.getResourceAsStream("/quests.json");
-        QuestInfo[] infos = new Gson().fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
+        QuestInfo[] infos = gson.fromJson(new InputStreamReader(questDataFile), QuestInfo[].class);
 
         // Populate HashMap for lookup
         for (int i = 0; i < infos.length; i++) {
