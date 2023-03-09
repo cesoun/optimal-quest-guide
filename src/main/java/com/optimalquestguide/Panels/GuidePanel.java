@@ -190,7 +190,7 @@ public class GuidePanel extends PluginPanel {
 
                 // Check for which skill type it is.
                 if (skill.equalsIgnoreCase("quest points")) {
-                    if (meetsRequirement(this.c.getVarpValue(VarPlayer.QUEST_POINTS.getId()), level)) continue;
+                    if (meetsRequirement(this.c.getVarpValue(VarPlayer.QUEST_POINTS), level)) continue;
                 } else if (skill.equalsIgnoreCase("combat level")) {
                     if (meetsRequirement(this.c.getLocalPlayer().getCombatLevel(), level)) continue;
                 } else {

@@ -164,7 +164,7 @@ public class QuestPanel extends JPanel {
                 String skill = requirement.getSkill();
 
                 if (skill.equalsIgnoreCase("quest points")) {
-                    updateRequirement(requirement, skill, this.c.getVarpValue(VarPlayer.QUEST_POINTS.getId()));
+                    updateRequirement(requirement, skill, this.c.getVarpValue(VarPlayer.QUEST_POINTS));
                 } else if (skill.equalsIgnoreCase("combat level")) {
                     updateRequirement(requirement, skill, this.c.getLocalPlayer().getCombatLevel());
                 } else {
