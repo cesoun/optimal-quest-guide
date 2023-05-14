@@ -144,7 +144,6 @@ public class GuidePlugin extends Plugin {
         for (Quest quest : Quest.values()) {
            QuestInfo info = infoMap.get(quest.getName());
            if (info == null) {
-               log.debug("Unknown quest: {}\n", quest.getName());
                continue;
            }
 
