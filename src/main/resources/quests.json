@@ -264,12 +264,18 @@
         "reqs": []
     },
     {
-        "name": "Recipe for Disaster/Another Cook's Quest",
+        "name": "Recipe for Disaster - Another Cook's Quest",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Another_Cook's_Quest",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 10,
+                "boostable": false
+            }
+        ]
     },
     {
-        "name": "Recipe for Disaster/Freeing the Goblin generals",
+        "name": "Recipe for Disaster - Wartface & Bentnoze",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Goblin_generals",
         "reqs": []
     },
@@ -511,7 +517,7 @@
         ]
     },
     {
-        "name": "Recipe for Disaster/Freeing the Mountain Dwarf",
+        "name": "Recipe for Disaster - Mountain Dwarf",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Mountain_Dwarf",
         "reqs": []
     },
@@ -1059,14 +1065,26 @@
         ]
     },
     {
-        "name": "Recipe for Disaster/Freeing Evil Dave",
+        "name": "Recipe for Disaster - Evil Dave",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Evil_Dave",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 25,
+                "boostable": false
+            }
+        ]
     },
     {
-        "name": "Recipe for Disaster/Freeing Pirate Pete",
+        "name": "Recipe for Disaster - Pirate Pete",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Pirate_Pete",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 31,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Tai Bwo Wannai Trio",
@@ -1217,8 +1235,8 @@
         "reqs": []
     },
     {
-        "name": "Architectural alliance",
-        "uri": "https://oldschool.runescape.wiki/w/Architectural_alliance",
+        "name": "Architectural Alliance",
+        "uri": "https://oldschool.runescape.wiki/w/Architectural_Alliance",
         "reqs": []
     },
     {
@@ -1448,14 +1466,31 @@
         ]
     },
     {
-        "name": "Recipe for Disaster/Freeing the Lumbridge Guide",
+        "name": "Recipe for Disaster - Lumbridge Guide",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Lumbridge_Guide",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 40,
+                "boostable": true
+            }
+        ]
     },
     {
-        "name": "Recipe for Disaster/Freeing Skrach Uglogwee",
+        "name": "Recipe for Disaster - Skrach Uglogwee",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Skrach_Uglogwee",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 41,
+                "boostable": true
+            },
+            {
+                "skill": "Firemaking",
+                "level": 20,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Heroes' Quest",
@@ -1557,8 +1592,8 @@
         "reqs": []
     },
     {
-        "name": "Desert Treasure",
-        "uri": "https://oldschool.runescape.wiki/w/Desert_Treasure",
+        "name": "Desert Treasure I",
+        "uri": "https://oldschool.runescape.wiki/w/Desert_Treasure_I",
         "reqs": [
             {
                 "skill": "Firemaking",
@@ -1723,9 +1758,15 @@
         ]
     },
     {
-        "name": "Recipe for Disaster/Freeing Sir Amik Varze",
+        "name": "Recipe for Disaster - Sir Amik Varze",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Sir_Amik_Varze",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 107,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Olaf's Quest",
@@ -1849,17 +1890,50 @@
     {
         "name": "Fairytale II - Cure a Queen",
         "uri": "https://oldschool.runescape.wiki/w/Fairytale_II_-_Cure_a_Queen",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Farming",
+                "level": 49,
+                "boostable": true
+            },
+            {
+                "skill": "Herblore",
+                "level": 57,
+                "boostable": true
+            },
+            {
+                "skill": "Thieving",
+                "level": 40,
+                "boostable": false
+            }
+        ]
     },
     {
-        "name": "Recipe for Disaster/Freeing King Awowogei",
+        "name": "Recipe for Disaster - King Awowogei",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_King_Awowogei",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 48,
+                "boostable": false
+            },
+            {
+                "skill": "Cooking",
+                "level": 70,
+                "boostable": true
+            }
+        ]
     },
     {
-        "name": "Recipe for Disaster/Defeating the Culinaromancer",
+        "name": "Recipe for Disaster - Culinaromancer",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Defeating_the_Culinaromancer",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 175,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Lunar Diplomacy",
@@ -2131,32 +2205,6 @@
         ]
     },
     {
-        "name": "Making Friends with My Arm",
-        "uri": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm",
-        "reqs": [
-            {
-                "skill": "Agility",
-                "level": 68,
-                "boostable": true
-            },
-            {
-                "skill": "Construction",
-                "level": 35,
-                "boostable": true
-            },
-            {
-                "skill": "Firemaking",
-                "level": 66,
-                "boostable": false
-            },
-            {
-                "skill": "Mining",
-                "level": 72,
-                "boostable": true
-            }
-        ]
-    },
-    {
         "name": "Monkey Madness II",
         "uri": "https://oldschool.runescape.wiki/w/Monkey_Madness_II",
         "reqs": [
@@ -2249,6 +2297,53 @@
             {
                 "skill": "Thieving",
                 "level": 60,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Making Friends with My Arm",
+        "uri": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 68,
+                "boostable": true
+            },
+            {
+                "skill": "Construction",
+                "level": 35,
+                "boostable": true
+            },
+            {
+                "skill": "Firemaking",
+                "level": 66,
+                "boostable": false
+            },
+            {
+                "skill": "Mining",
+                "level": 72,
+                "boostable": true
+            }
+        ]
+    },
+    {
+        "name": "Secrets of the North",
+        "uri": "https://oldschool.runescape.wiki/w/Secrets_of_the_North",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 69,
+                "boostable": false
+            },
+            {
+                "skill": "Hunter",
+                "level": 56,
+                "boostable": false
+            },
+            {
+                "skill": "Thieving",
+                "level": 64,
                 "boostable": false
             }
         ]
