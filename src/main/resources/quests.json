@@ -1867,6 +1867,11 @@
         "reqs": []
     },
     {
+        "name": "His Faithful Servants",
+        "uri": "https://oldschool.runescape.wiki/w/His_Faithful_Servants",
+        "reqs": []
+    },
+    {
         "name": "The Great Brain Robbery",
         "uri": "https://oldschool.runescape.wiki/w/The_Great_Brain_Robbery",
         "reqs": [
@@ -2349,6 +2354,53 @@
         ]
     },
     {
+        "name": "Below Ice Mountain",
+        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 16,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Desert Treasure II - The Fallen Empire",
+        "uri": "https://oldschool.runescape.wiki/w/Desert_Treasure_II_-_The_Fallen_Empire",
+        "reqs": [
+            {
+                "skill": "Construction",
+                "level": 60,
+                "boostable": false
+            },
+            {
+                "skill": "Firemaking",
+                "level": 75,
+                "boostable": false
+            },
+            {
+                "skill": "Herblore",
+                "level": 62,
+                "boostable": false
+            },
+            {
+                "skill": "Magic",
+                "level": 75,
+                "boostable": false
+            },
+            {
+                "skill": "Runecraft",
+                "level": 60,
+                "boostable": false
+            },
+            {
+                "skill": "Thieving",
+                "level": 70,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Song of the Elves",
         "uri": "https://oldschool.runescape.wiki/w/Song_of_the_Elves",
         "reqs": [
@@ -2403,16 +2455,5 @@
         "name": "The Corsair Curse",
         "uri": "https://oldschool.runescape.wiki/w/The_Corsair_Curse",
         "reqs": []
-    },
-    {
-        "name": "Below Ice Mountain",
-        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
-        "reqs": [
-            {
-                "skill": "Quest points",
-                "level": 16,
-                "boostable": false
-            }
-        ]
     }
 ]
