@@ -50,6 +50,11 @@
         "reqs": []
     },
     {
+        "name": "Children of the Sun",
+        "uri": "https://oldschool.runescape.wiki/w/Children_of_the_Sun",
+        "reqs": []
+    },
+    {
         "name": "Daddy's Home",
         "uri": "https://oldschool.runescape.wiki/w/Daddy's_Home",
         "reqs": []
@@ -68,6 +73,80 @@
         "name": "Tree Gnome Village",
         "uri": "https://oldschool.runescape.wiki/w/Tree_Gnome_Village",
         "reqs": []
+    },
+    {
+        "name": "Doric's Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Doric's_Quest",
+        "reqs": []
+    },
+    {
+        "name": "Witch's House",
+        "uri": "https://oldschool.runescape.wiki/w/Witch's_House",
+        "reqs": []
+    },
+    {
+        "name": "The Knight's Sword",
+        "uri": "https://oldschool.runescape.wiki/w/The_Knight's_Sword",
+        "reqs": [
+            {
+                "skill": "Mining",
+                "level": 10,
+                "boostable": true
+            }
+        ]
+    },
+    {
+        "name": "The Tourist Trap",
+        "uri": "https://oldschool.runescape.wiki/w/The_Tourist_Trap",
+        "reqs": [
+            {
+                "skill": "Fletching",
+                "level": 10,
+                "boostable": true
+            },
+            {
+                "skill": "Smithing",
+                "level": 20,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Black Knights' Fortress",
+        "uri": "https://oldschool.runescape.wiki/w/Black_Knights'_Fortress",
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 12,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Druidic Ritual",
+        "uri": "https://oldschool.runescape.wiki/w/Druidic_Ritual",
+        "reqs": []
+    },
+    {
+        "name": "Recruitment Drive",
+        "uri": "https://oldschool.runescape.wiki/w/Recruitment_Drive",
+        "reqs": []
+    },
+    {
+        "name": "Goblin Diplomacy",
+        "uri": "https://oldschool.runescape.wiki/w/Goblin_Diplomacy",
+        "reqs": []
+    },
+    {
+        "name": "Sleeping Giants",
+        "uri": "https://oldschool.runescape.wiki/w/Sleeping_Giants",
+        "reqs": [
+            {
+                "skill": "Smithing",
+                "level": 15,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Fight Arena",
@@ -122,16 +201,6 @@
         ]
     },
     {
-        "name": "Druidic Ritual",
-        "uri": "https://oldschool.runescape.wiki/w/Druidic_Ritual",
-        "reqs": []
-    },
-    {
-        "name": "Witch's House",
-        "uri": "https://oldschool.runescape.wiki/w/Witch's_House",
-        "reqs": []
-    },
-    {
         "name": "Death Plateau",
         "uri": "https://oldschool.runescape.wiki/w/Death_Plateau",
         "reqs": []
@@ -156,44 +225,6 @@
         "name": "Murder Mystery",
         "uri": "https://oldschool.runescape.wiki/w/Murder_Mystery",
         "reqs": []
-    },
-    {
-        "name": "The Knight's Sword",
-        "uri": "https://oldschool.runescape.wiki/w/The_Knight's_Sword",
-        "reqs": [
-            {
-                "skill": "Mining",
-                "level": 10,
-                "boostable": true
-            }
-        ]
-    },
-    {
-        "name": "Sleeping Giants",
-        "uri": "https://oldschool.runescape.wiki/w/Sleeping_Giants",
-        "reqs": [
-            {
-                "skill": "Smithing",
-                "level": 15,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "The Tourist Trap",
-        "uri": "https://oldschool.runescape.wiki/w/The_Tourist_Trap",
-        "reqs": [
-            {
-                "skill": "Fletching",
-                "level": 10,
-                "boostable": true
-            },
-            {
-                "skill": "Smithing",
-                "level": 20,
-                "boostable": false
-            }
-        ]
     },
     {
         "name": "The Grand Tree",
@@ -222,61 +253,24 @@
         "reqs": []
     },
     {
-        "name": "Making History",
-        "uri": "https://oldschool.runescape.wiki/w/Making_History",
-        "reqs": []
-    },
-    {
-        "name": "Mountain Daughter",
-        "uri": "https://oldschool.runescape.wiki/w/Mountain_Daughter",
+        "name": "Ghosts Ahoy",
+        "uri": "https://oldschool.runescape.wiki/w/Ghosts_Ahoy",
         "reqs": [
             {
                 "skill": "Agility",
+                "level": 25,
+                "boostable": true
+            },
+            {
+                "skill": "Cooking",
                 "level": 20,
                 "boostable": true
             }
         ]
     },
     {
-        "name": "Doric's Quest",
-        "uri": "https://oldschool.runescape.wiki/w/Doric's_Quest",
-        "reqs": []
-    },
-    {
-        "name": "Black Knights' Fortress",
-        "uri": "https://oldschool.runescape.wiki/w/Black_Knights'_Fortress",
-        "reqs": [
-            {
-                "skill": "Quest points",
-                "level": 12,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Recruitment Drive",
-        "uri": "https://oldschool.runescape.wiki/w/Recruitment_Drive",
-        "reqs": []
-    },
-    {
-        "name": "Goblin Diplomacy",
-        "uri": "https://oldschool.runescape.wiki/w/Goblin_Diplomacy",
-        "reqs": []
-    },
-    {
-        "name": "Recipe for Disaster - Another Cook's Quest",
-        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Another_Cook's_Quest",
-        "reqs": [
-            {
-                "skill": "Cooking",
-                "level": 10,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Recipe for Disaster - Wartface & Bentnoze",
-        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Goblin_generals",
+        "name": "Making History",
+        "uri": "https://oldschool.runescape.wiki/w/Making_History",
         "reqs": []
     },
     {
@@ -359,15 +353,9 @@
         ]
     },
     {
-        "name": "The Feud",
-        "uri": "https://oldschool.runescape.wiki/w/The_Feud",
-        "reqs": [
-            {
-                "skill": "Thieving",
-                "level": 30,
-                "boostable": false
-            }
-        ]
+        "name": "The Ribbiting Tale of a Lily Pad Labour Dispute",
+        "uri": "https://oldschool.runescape.wiki/w/The_Ribbiting_Tale_of_a_Lily_Pad_Labour_Dispute",
+        "reqs": []
     },
     {
         "name": "Lost City",
@@ -391,8 +379,78 @@
         "reqs": []
     },
     {
+        "name": "Recipe for Disaster - Another Cook's Quest",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Another_Cook's_Quest",
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 10,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Recipe for Disaster - Wartface & Bentnoze",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Goblin_generals",
+        "reqs": []
+    },
+    {
+        "name": "Sea Slug",
+        "uri": "https://oldschool.runescape.wiki/w/Sea_Slug",
+        "reqs": [
+            {
+                "skill": "Firemaking",
+                "level": 30,
+                "boostable": true
+            }
+        ]
+    },
+    {
+        "name": "Fishing Contest",
+        "uri": "https://oldschool.runescape.wiki/w/Fishing_Contest",
+        "reqs": [
+            {
+                "skill": "Fishing",
+                "level": 10,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Recipe for Disaster - Mountain Dwarf",
+        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Mountain_Dwarf",
+        "reqs": []
+    },
+    {
+        "name": "Mountain Daughter",
+        "uri": "https://oldschool.runescape.wiki/w/Mountain_Daughter",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 20,
+                "boostable": true
+            }
+        ]
+    },
+    {
         "name": "Ratcatchers",
         "uri": "https://oldschool.runescape.wiki/w/Ratcatchers",
+        "reqs": []
+    },
+    {
+        "name": "The Feud",
+        "uri": "https://oldschool.runescape.wiki/w/The_Feud",
+        "reqs": [
+            {
+                "skill": "Thieving",
+                "level": 30,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Death on the Isle",
+        "uri": "https://oldschool.runescape.wiki/w/Death_on_the_Isle",
         "reqs": []
     },
     {
@@ -495,31 +553,15 @@
         "reqs": []
     },
     {
-        "name": "Sea Slug",
-        "uri": "https://oldschool.runescape.wiki/w/Sea_Slug",
+        "name": "Wanted!",
+        "uri": "https://oldschool.runescape.wiki/w/Wanted!",
         "reqs": [
             {
-                "skill": "Firemaking",
-                "level": 30,
-                "boostable": true
-            }
-        ]
-    },
-    {
-        "name": "Fishing Contest",
-        "uri": "https://oldschool.runescape.wiki/w/Fishing_Contest",
-        "reqs": [
-            {
-                "skill": "Fishing",
-                "level": 10,
+                "skill": "Quest points",
+                "level": 32,
                 "boostable": false
             }
         ]
-    },
-    {
-        "name": "Recipe for Disaster - Mountain Dwarf",
-        "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Mountain_Dwarf",
-        "reqs": []
     },
     {
         "name": "Shield of Arrav",
@@ -629,33 +671,6 @@
         "name": "Ernest the Chicken",
         "uri": "https://oldschool.runescape.wiki/w/Ernest_the_Chicken",
         "reqs": []
-    },
-    {
-        "name": "Wanted!",
-        "uri": "https://oldschool.runescape.wiki/w/Wanted!",
-        "reqs": [
-            {
-                "skill": "Quest points",
-                "level": 32,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Ghosts Ahoy",
-        "uri": "https://oldschool.runescape.wiki/w/Ghosts_Ahoy",
-        "reqs": [
-            {
-                "skill": "Agility",
-                "level": 25,
-                "boostable": true
-            },
-            {
-                "skill": "Cooking",
-                "level": 20,
-                "boostable": true
-            }
-        ]
     },
     {
         "name": "Demon Slayer",
@@ -1235,11 +1250,6 @@
         "reqs": []
     },
     {
-        "name": "Architectural Alliance",
-        "uri": "https://oldschool.runescape.wiki/w/Architectural_Alliance",
-        "reqs": []
-    },
-    {
         "name": "The Slug Menace",
         "uri": "https://oldschool.runescape.wiki/w/The_Slug_Menace",
         "reqs": [
@@ -1466,6 +1476,11 @@
         ]
     },
     {
+        "name": "Meat and Greet",
+        "uri": "https://oldschool.runescape.wiki/w/Meat_and_Greet",
+        "reqs": []
+    },
+    {
         "name": "Recipe for Disaster - Lumbridge Guide",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Lumbridge_Guide",
         "reqs": [
@@ -1563,6 +1578,11 @@
     {
         "name": "Monkey Madness I",
         "uri": "https://oldschool.runescape.wiki/w/Monkey_Madness_I",
+        "reqs": []
+    },
+    {
+        "name": "Ethically Acquired Antiquities",
+        "uri": "https://oldschool.runescape.wiki/w/Ethically_Acquired_Antiquities",
         "reqs": []
     },
     {
@@ -1857,6 +1877,17 @@
         ]
     },
     {
+        "name": "At First Light",
+        "uri": "https://oldschool.runescape.wiki/w/At_First_Light",
+        "reqs": [
+            {
+                "skill": "Hunter",
+                "level": 46,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Curse of the Empty Lord",
         "uri": "https://oldschool.runescape.wiki/w/Curse_of_the_Empty_Lord",
         "reqs": []
@@ -1939,6 +1970,63 @@
                 "boostable": false
             }
         ]
+    },
+    {
+        "name": "Twilight's Promise",
+        "uri": "https://oldschool.runescape.wiki/w/Twilight's_Promise",
+        "reqs": []
+    },
+    {
+        "name": "Perilous Moons",
+        "uri": "https://oldschool.runescape.wiki/w/Perilous_Moons",
+        "reqs": [
+            {
+                "skill": "Hunter",
+                "level": 20,
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": 48,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Path of Glouphrie",
+        "uri": "https://oldschool.runescape.wiki/w/The_Path_of_Glouphrie",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 45,
+                "boostable": false
+            },
+            {
+                "skill": "Ranged",
+                "level": 47,
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": 56,
+                "boostable": false
+            },
+            {
+                "skill": "Strength",
+                "level": 60,
+                "boostable": false
+            },
+            {
+                "skill": "Thieving",
+                "level": 56,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Heart of Darkness",
+        "uri": "https://oldschool.runescape.wiki/w/The_Heart_of_Darkness",
+        "reqs": []
     },
     {
         "name": "Lunar Diplomacy",
@@ -2040,6 +2128,33 @@
                 "skill": "Smithing",
                 "level": 45,
                 "boostable": true
+            }
+        ]
+    },
+    {
+        "name": "Below Ice Mountain",
+        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 16,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Defender of Varrock",
+        "uri": "https://oldschool.runescape.wiki/w/Defender_of_Varrock",
+        "reqs": [
+            {
+                "skill": "Hunter",
+                "level": 52,
+                "boostable": false
+            },
+            {
+                "skill": "Smithing",
+                "level": 55,
+                "boostable": false
             }
         ]
     },
@@ -2354,12 +2469,47 @@
         ]
     },
     {
-        "name": "Below Ice Mountain",
-        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
+        "name": "While Guthix Sleeps",
+        "uri": "https://oldschool.runescape.wiki/w/While_Guthix_Sleeps",
         "reqs": [
             {
+                "skill": "Agility",
+                "level": 66,
+                "boostable": false
+            },
+            {
+                "skill": "Defence",
+                "level": 40,
+                "boostable": false
+            },
+            {
+                "skill": "Farming",
+                "level": 65,
+                "boostable": false
+            },
+            {
+                "skill": "Herblore",
+                "level": 65,
+                "boostable": false
+            },
+            {
+                "skill": "Hunter",
+                "level": 62,
+                "boostable": false
+            },
+            {
+                "skill": "Magic",
+                "level": 67,
+                "boostable": false
+            },
+            {
                 "skill": "Quest points",
-                "level": 16,
+                "level": 180,
+                "boostable": false
+            },
+            {
+                "skill": "Thieving",
+                "level": 72,
                 "boostable": false
             }
         ]
