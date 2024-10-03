@@ -24,7 +24,7 @@ dependencies {
 }
 
 group = 'com.optimalquestguide'
-version = '2.6-SNAPSHOT'
+version = '2.7-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
