@@ -53,8 +53,7 @@ import java.util.HashMap;
 @PluginDescriptor(
         name = "Optimal Quest Guide",
         description = "I wanted this so now you get this as well. OSRS Wiki Optimal Quest Guide.",
-        tags = {"quest", "guide", "optimal"},
-        loadWhenOutdated = true
+        tags = {"quest", "guide", "optimal"}
 )
 public class GuidePlugin extends Plugin {
 
