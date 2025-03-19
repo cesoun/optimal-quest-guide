@@ -2422,6 +2422,42 @@
         ]
     },
     {
+        "name": "The Curse of Arrav",
+        "uri": "https://oldschool.runescape.wiki/w/The_Curse_of_Arrav",
+        "reqs": [
+            {
+                "skill": "Mining",
+                "level": 64,
+                "boostable": false
+            },
+            {
+                "skill": "Ranged",
+                "level": 62,
+                "boostable": false
+            },
+            {
+                "skill": "Thieving",
+                "level": 62,
+                "boostable": false
+            },
+            {
+                "skill": "Agility",
+                "level": 61,
+                "boostable": false
+            },
+            {
+                "skill": "Strength",
+                "level": 58,
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": 37,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Making Friends with My Arm",
         "uri": "https://oldschool.runescape.wiki/w/Making_Friends_with_My_Arm",
         "reqs": [
