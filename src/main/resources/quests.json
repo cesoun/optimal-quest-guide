@@ -2371,6 +2371,53 @@
         "reqs": []
     },
     {
+        "name": "Scrambled!",
+        "uri": "https://oldschool.runescape.wiki/w/Scrambled!",
+        "reqs": [
+            {
+                "skill": "Construction",
+                "level": 38,
+                "boostable": false
+            },
+            {
+                "skill": "Cooking",
+                "level": 36,
+                "boostable": false
+            },
+            {
+                "skill": "Construction",
+                "level": 38,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Shadows of Custodia",
+        "uri": "https://oldschool.runescape.wiki/w/Shadows_of_Custodia",
+        "reqs": [
+            {
+                "skill": "Construction",
+                "level": 41,
+                "boostable": false
+            },
+            {
+                "skill": "Fishing",
+                "level": 45,
+                "boostable": false
+            },
+            {
+                "skill": "Hunter",
+                "level": 36,
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": 54,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Dragon Slayer II",
         "uri": "https://oldschool.runescape.wiki/w/Dragon_Slayer_II",
         "reqs": [
@@ -2500,6 +2547,27 @@
             {
                 "skill": "Thieving",
                 "level": 64,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Final Dawn",
+        "uri": "https://oldschool.runescape.wiki/w/The_Final_Dawn",
+        "reqs": [
+            { 
+                "skill": "Fletching",
+                "level": 52,
+                "boostable": false
+            },
+            { 
+                "skill": "Runecraft",
+                "level": 52,
+                "boostable": false
+            },
+            { 
+                "skill": "Thieving",
+                "level": 66,
                 "boostable": false
             }
         ]
