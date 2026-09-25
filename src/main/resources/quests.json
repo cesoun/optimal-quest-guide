@@ -114,7 +114,13 @@
     {
         "name": "Black Knights' Fortress",
         "uri": "https://oldschool.runescape.wiki/w/Black_Knights'_Fortress",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 12,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Druidic Ritual",
@@ -613,7 +619,13 @@
     {
         "name": "Wanted!",
         "uri": "https://oldschool.runescape.wiki/w/Wanted!",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 32,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Shield of Arrav",
@@ -922,6 +934,11 @@
                 "skill": "Firemaking",
                 "level": 20,
                 "boostable": false
+            },
+            {
+                "skill": "Quest points",
+                "level": 20,
+                "boostable": false
             }
         ]
     },
@@ -947,6 +964,11 @@
             {
                 "skill": "Mining",
                 "level": 20,
+                "boostable": false
+            },
+            {
+                "skill": "Quest points",
+                "level": 43,
                 "boostable": false
             }
         ]
@@ -1097,7 +1119,13 @@
     {
         "name": "Dragon Slayer I",
         "uri": "https://oldschool.runescape.wiki/w/Dragon_Slayer_I",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 32,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "The Fremennik Trials",
@@ -1571,6 +1599,11 @@
                 "skill": "Mining",
                 "level": 50,
                 "boostable": true
+            },
+            {
+                "skill": "Quest points",
+                "level": 55,
+                "boostable": false
             }
         ]
     },
@@ -1772,6 +1805,11 @@
                 "boostable": true
             },
             {
+                "skill": "Quest points",
+                "level": 107,
+                "boostable": false
+            },
+            {
                 "skill": "Smithing",
                 "level": 50,
                 "boostable": true
@@ -1822,7 +1860,13 @@
     {
         "name": "Recipe for Disaster - Sir Amik Varze",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_Sir_Amik_Varze",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 107,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Olaf's Quest",
@@ -2025,7 +2069,13 @@
     {
         "name": "Recipe for Disaster - Culinaromancer",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Defeating_the_Culinaromancer",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 175,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Perilous Moons",
@@ -2207,6 +2257,11 @@
                 "boostable": true
             },
             {
+                "skill": "Quest points",
+                "level": 100,
+                "boostable": false
+            },
+            {
                 "skill": "Smithing",
                 "level": 45,
                 "boostable": true
@@ -2216,7 +2271,13 @@
     {
         "name": "Below Ice Mountain",
         "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 16,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Defender of Varrock",
@@ -2289,7 +2350,13 @@
     {
         "name": "Dream Mentor",
         "uri": "https://oldschool.runescape.wiki/w/Dream_Mentor",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Combat level",
+                "level": 85,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "The Fremennik Exiles",
@@ -2579,6 +2646,11 @@
                 "boostable": false
             },
             {
+                "skill": "Quest points",
+                "level": 200,
+                "boostable": false
+            },
+            {
                 "skill": "Smithing",
                 "level": 70,
                 "boostable": false
@@ -2721,6 +2793,11 @@
             {
                 "skill": "Magic",
                 "level": 67,
+                "boostable": false
+            },
+            {
+                "skill": "Quest points",
+                "level": 180,
                 "boostable": false
             },
             {
