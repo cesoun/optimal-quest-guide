@@ -65,6 +65,16 @@
         "reqs": []
     },
     {
+        "name": "Mudfoot's Big Adventure",
+        "uri": "https://oldschool.runescape.wiki/w/Mudfoot's_Big_Adventure",
+        "reqs": []
+    },
+    {
+        "name": "Ernest the Chicken",
+        "uri": "https://oldschool.runescape.wiki/w/Ernest_the_Chicken",
+        "reqs": []
+    },
+    {
         "name": "Waterfall Quest",
         "uri": "https://oldschool.runescape.wiki/w/Waterfall_Quest",
         "reqs": []
@@ -83,6 +93,43 @@
         "name": "Witch's House",
         "uri": "https://oldschool.runescape.wiki/w/Witch's_House",
         "reqs": []
+    },
+    {
+        "name": "Below Ice Mountain",
+        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 16,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Birds and the Wasps",
+        "uri": "https://oldschool.runescape.wiki/w/The_Birds_and_the_Wasps",
+        "reqs": []
+    },
+    {
+        "name": "Romeo & Juliet",
+        "uri": "https://oldschool.runescape.wiki/w/Romeo_&_Juliet",
+        "reqs": []
+    },
+    {
+        "name": "Demon Slayer",
+        "uri": "https://oldschool.runescape.wiki/w/Demon_Slayer",
+        "reqs": []
+    },
+    {
+        "name": "Black Knights' Fortress",
+        "uri": "https://oldschool.runescape.wiki/w/Black_Knights'_Fortress",
+        "reqs": [
+            {
+                "skill": "Quest points",
+                "level": 12,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "The Knight's Sword",
@@ -107,17 +154,6 @@
             {
                 "skill": "Smithing",
                 "level": 20,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Black Knights' Fortress",
-        "uri": "https://oldschool.runescape.wiki/w/Black_Knights'_Fortress",
-        "reqs": [
-            {
-                "skill": "Quest points",
-                "level": 12,
                 "boostable": false
             }
         ]
@@ -227,6 +263,22 @@
         "reqs": []
     },
     {
+        "name": "The Writing's on the Wall",
+        "uri": "https://oldschool.runescape.wiki/w/The_Writing's_on_the_Wall",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 23,
+                "boostable": true
+            },
+            {
+                "skill": "Thieving",
+                "level": 20,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "The Grand Tree",
         "uri": "https://oldschool.runescape.wiki/w/The_Grand_Tree",
         "reqs": [
@@ -264,6 +316,11 @@
         "reqs": []
     },
     {
+        "name": "Pirate's Treasure",
+        "uri": "https://oldschool.runescape.wiki/w/Pirate's_Treasure",
+        "reqs": []
+    },
+    {
         "name": "Ghosts Ahoy",
         "uri": "https://oldschool.runescape.wiki/w/Ghosts_Ahoy",
         "reqs": [
@@ -288,6 +345,27 @@
         "name": "The Ides of Milk",
         "uri": "https://oldschool.runescape.wiki/w/The_Ides_of_Milk",
         "reqs": []
+    },
+    {
+        "name": "The Corsair Curse",
+        "uri": "https://oldschool.runescape.wiki/w/The_Corsair_Curse",
+        "reqs": []
+    },
+    {
+        "name": "Clock Tower",
+        "uri": "https://oldschool.runescape.wiki/w/Clock_Tower",
+        "reqs": []
+    },
+    {
+        "name": "Sea Slug",
+        "uri": "https://oldschool.runescape.wiki/w/Sea_Slug",
+        "reqs": [
+            {
+                "skill": "Firemaking",
+                "level": 30,
+                "boostable": true
+            }
+        ]
     },
     {
         "name": "The Lost Tribe",
@@ -316,7 +394,7 @@
         "reqs": [
             {
                 "skill": "Agility",
-                "level": 23,
+                "level": 22,
                 "boostable": true
             },
             {
@@ -371,7 +449,13 @@
     {
         "name": "The Ribbiting Tale of a Lily Pad Labour Dispute",
         "uri": "https://oldschool.runescape.wiki/w/The_Ribbiting_Tale_of_a_Lily_Pad_Labour_Dispute",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Woodcutting",
+                "level": 15,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "Lost City",
@@ -409,17 +493,6 @@
         "name": "Recipe for Disaster - Wartface & Bentnoze",
         "uri": "https://oldschool.runescape.wiki/w/Recipe_for_Disaster/Freeing_the_Goblin_generals",
         "reqs": []
-    },
-    {
-        "name": "Sea Slug",
-        "uri": "https://oldschool.runescape.wiki/w/Sea_Slug",
-        "reqs": [
-            {
-                "skill": "Firemaking",
-                "level": 30,
-                "boostable": true
-            }
-        ]
     },
     {
         "name": "Pandemonium",
@@ -581,13 +654,19 @@
         "reqs": []
     },
     {
-        "name": "X Marks the Spot",
-        "uri": "https://oldschool.runescape.wiki/w/X_Marks_the_Spot",
-        "reqs": []
+        "name": "Temple of the Eye",
+        "uri": "https://oldschool.runescape.wiki/w/Temple_of_the_Eye",
+        "reqs": [
+            {
+                "skill": "Runecraft",
+                "level": 10,
+                "boostable": false
+            }
+        ]
     },
     {
-        "name": "Pirate's Treasure",
-        "uri": "https://oldschool.runescape.wiki/w/Pirate's_Treasure",
+        "name": "X Marks the Spot",
+        "uri": "https://oldschool.runescape.wiki/w/X_Marks_the_Spot",
         "reqs": []
     },
     {
@@ -598,7 +677,13 @@
     {
         "name": "The Queen of Thieves",
         "uri": "https://oldschool.runescape.wiki/w/The_Queen_of_Thieves",
-        "reqs": []
+        "reqs": [
+            {
+                "skill": "Thieving",
+                "level": 20,
+                "boostable": false
+            }
+        ]
     },
     {
         "name": "The Depths of Despair",
@@ -729,16 +814,6 @@
     {
         "name": "Vampyre Slayer",
         "uri": "https://oldschool.runescape.wiki/w/Vampyre_Slayer",
-        "reqs": []
-    },
-    {
-        "name": "Ernest the Chicken",
-        "uri": "https://oldschool.runescape.wiki/w/Ernest_the_Chicken",
-        "reqs": []
-    },
-    {
-        "name": "Demon Slayer",
-        "uri": "https://oldschool.runescape.wiki/w/Demon_Slayer",
         "reqs": []
     },
     {
@@ -943,11 +1018,6 @@
         ]
     },
     {
-        "name": "Romeo & Juliet",
-        "uri": "https://oldschool.runescape.wiki/w/Romeo_&_Juliet",
-        "reqs": []
-    },
-    {
         "name": "Tears of Guthix",
         "uri": "https://oldschool.runescape.wiki/w/Tears_of_Guthix",
         "reqs": [
@@ -1095,6 +1165,17 @@
         ]
     },
     {
+        "name": "A Shell of a Friend",
+        "uri": "https://oldschool.runescape.wiki/w/A_Shell_of_a_Friend",
+        "reqs": [
+            {
+                "skill": "Construction",
+                "level": 15,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Underground Pass",
         "uri": "https://oldschool.runescape.wiki/w/Underground_Pass",
         "reqs": [
@@ -1208,17 +1289,6 @@
             {
                 "skill": "Magic",
                 "level": 46,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Temple of the Eye",
-        "uri": "https://oldschool.runescape.wiki/w/Temple_of_the_Eye",
-        "reqs": [
-            {
-                "skill": "Runecraft",
-                "level": 10,
                 "boostable": false
             }
         ]
@@ -1978,6 +2048,27 @@
         ]
     },
     {
+        "name": "A New Leaf",
+        "uri": "https://oldschool.runescape.wiki/w/A_New_Leaf",
+        "reqs": [
+            {
+                "skill": "Cooking",
+                "level": 35,
+                "boostable": true
+            },
+            {
+                "skill": "Farming",
+                "level": 45,
+                "boostable": true
+            },
+            {
+                "skill": "Herblore",
+                "level": 32,
+                "boostable": true
+            }
+        ]
+    },
+    {
         "name": "Curse of the Empty Lord",
         "uri": "https://oldschool.runescape.wiki/w/Curse_of_the_Empty_Lord",
         "reqs": []
@@ -2025,6 +2116,58 @@
             {
                 "skill": "Smithing",
                 "level": 35,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Troubled Tortugans",
+        "uri": "https://oldschool.runescape.wiki/w/Troubled_Tortugans",
+        "reqs": [
+            {
+                "skill": "Construction",
+                "level": 48,
+                "boostable": false
+            },
+            {
+                "skill": "Crafting",
+                "level": 34,
+                "boostable": false
+            },
+            {
+                "skill": "Hunter",
+                "level": 45,
+                "boostable": false
+            },
+            {
+                "skill": "Sailing",
+                "level": 45,
+                "boostable": false
+            },
+            {
+                "skill": "Slayer",
+                "level": 51,
+                "boostable": false
+            },
+            {
+                "skill": "Woodcutting",
+                "level": 40,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Red Reef",
+        "uri": "https://oldschool.runescape.wiki/w/The_Red_Reef",
+        "reqs": [
+            {
+                "skill": "Sailing",
+                "level": 52,
+                "boostable": false
+            },
+            {
+                "skill": "Smithing",
+                "level": 48,
                 "boostable": false
             }
         ]
@@ -2166,6 +2309,32 @@
         ]
     },
     {
+        "name": "Fallen From Grace",
+        "uri": "https://oldschool.runescape.wiki/w/Fallen_From_Grace",
+        "reqs": [
+            {
+                "skill": "Crafting",
+                "level": 60,
+                "boostable": false
+            },
+            {
+                "skill": "Mining",
+                "level": 53,
+                "boostable": false
+            },
+            {
+                "skill": "Runecraft",
+                "level": 47,
+                "boostable": false
+            },
+            {
+                "skill": "Sailing",
+                "level": 65,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "Lunar Diplomacy",
         "uri": "https://oldschool.runescape.wiki/w/Lunar_Diplomacy",
         "reqs": [
@@ -2269,17 +2438,6 @@
         ]
     },
     {
-        "name": "Below Ice Mountain",
-        "uri": "https://oldschool.runescape.wiki/w/Below_Ice_Mountain",
-        "reqs": [
-            {
-                "skill": "Quest points",
-                "level": 16,
-                "boostable": false
-            }
-        ]
-    },
-    {
         "name": "Defender of Varrock",
         "uri": "https://oldschool.runescape.wiki/w/Defender_of_Varrock",
         "reqs": [
@@ -2291,6 +2449,17 @@
             {
                 "skill": "Smithing",
                 "level": 55,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "Rag and Bone Man III",
+        "uri": "https://oldschool.runescape.wiki/w/Rag_and_Bone_Man_III",
+        "reqs": [
+            {
+                "skill": "Slayer",
+                "level": 60,
                 "boostable": false
             }
         ]
@@ -2359,6 +2528,27 @@
         ]
     },
     {
+        "name": "Beneath Cursed Sands",
+        "uri": "https://oldschool.runescape.wiki/w/Beneath_Cursed_Sands",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 62,
+                "boostable": false
+            },
+            {
+                "skill": "Crafting",
+                "level": 55,
+                "boostable": false
+            },
+            {
+                "skill": "Firemaking",
+                "level": 55,
+                "boostable": false
+            }
+        ]
+    },
+    {
         "name": "The Fremennik Exiles",
         "uri": "https://oldschool.runescape.wiki/w/The_Fremennik_Exiles",
         "reqs": [
@@ -2379,12 +2569,33 @@
             },
             {
                 "skill": "Slayer",
-                "level": 60,
+                "level": 58,
                 "boostable": false
             },
             {
                 "skill": "Smithing",
                 "level": 60,
+                "boostable": false
+            }
+        ]
+    },
+    {
+        "name": "The Graveyard",
+        "uri": "https://oldschool.runescape.wiki/w/The_Graveyard",
+        "reqs": [
+            {
+                "skill": "Agility",
+                "level": 66,
+                "boostable": false
+            },
+            {
+                "skill": "Fletching",
+                "level": 60,
+                "boostable": false
+            },
+            {
+                "skill": "Woodcutting",
+                "level": 56,
                 "boostable": false
             }
         ]
@@ -2410,7 +2621,7 @@
             },
             {
                 "skill": "Fletching",
-                "level": 60,
+                "level": 54,
                 "boostable": false
             },
             {
@@ -2441,27 +2652,6 @@
         "reqs": []
     },
     {
-        "name": "Beneath Cursed Sands",
-        "uri": "https://oldschool.runescape.wiki/w/Beneath_Cursed_Sands",
-        "reqs": [
-            {
-                "skill": "Agility",
-                "level": 62,
-                "boostable": false
-            },
-            {
-                "skill": "Crafting",
-                "level": 55,
-                "boostable": false
-            },
-            {
-                "skill": "Firemaking",
-                "level": 55,
-                "boostable": false
-            }
-        ]
-    },
-    {
         "name": "Shadows of Custodia",
         "uri": "https://oldschool.runescape.wiki/w/Shadows_of_Custodia",
         "reqs": [
@@ -2483,84 +2673,6 @@
             {
                 "skill": "Slayer",
                 "level": 54,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Troubled Tortugans",
-        "uri": "https://oldschool.runescape.wiki/w/Troubled_Tortugans",
-        "reqs": [
-            {
-                "skill": "Construction",
-                "level": 48,
-                "boostable": false
-            },
-            {
-                "skill": "Crafting",
-                "level": 34,
-                "boostable": false
-            },
-            {
-                "skill": "Hunter",
-                "level": 45,
-                "boostable": false
-            },
-            {
-                "skill": "Sailing",
-                "level": 45,
-                "boostable": false
-            },
-            {
-                "skill": "Slayer",
-                "level": 51,
-                "boostable": false
-            },
-            {
-                "skill": "Woodcutting",
-                "level": 40,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "The Red Reef",
-        "uri": "https://oldschool.runescape.wiki/w/The_Red_Reef",
-        "reqs": [
-            {
-                "skill": "Sailing",
-                "level": 52,
-                "boostable": false
-            },
-            {
-                "skill": "Smithing",
-                "level": 48,
-                "boostable": false
-            }
-        ]
-    },
-    {
-        "name": "Fallen From Grace",
-        "uri": "https://oldschool.runescape.wiki/w/Fallen_From_Grace",
-        "reqs": [
-            {
-                "skill": "Crafting",
-                "level": 60,
-                "boostable": false
-            },
-            {
-                "skill": "Mining",
-                "level": 53,
-                "boostable": false
-            },
-            {
-                "skill": "Runecraft",
-                "level": 47,
-                "boostable": false
-            },
-            {
-                "skill": "Sailing",
-                "level": 62,
                 "boostable": false
             }
         ]
@@ -2772,7 +2884,7 @@
         "reqs": [
             {
                 "skill": "Agility",
-                "level": 66,
+                "level": 65,
                 "boostable": false
             },
             {
@@ -2944,15 +3056,5 @@
                 "boostable": false
             }
         ]
-    },
-    {
-        "name": "Clock Tower",
-        "uri": "https://oldschool.runescape.wiki/w/Clock_Tower",
-        "reqs": []
-    },
-    {
-        "name": "The Corsair Curse",
-        "uri": "https://oldschool.runescape.wiki/w/The_Corsair_Curse",
-        "reqs": []
     }
 ]
